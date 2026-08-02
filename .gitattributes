@@ -18,6 +18,13 @@
 *.sketch             filter=lfs diff=lfs merge=lfs -text
 
 # ---------------------------------------------------------------------------
+# Public web assets should ship as regular Git blobs so static hosts like
+# Vercel can serve them without requiring Git LFS fetch support.
+# ---------------------------------------------------------------------------
+public/assets/**     -filter -diff -merge -text
+public/favicon.png   -filter -diff -merge -text
+
+# ---------------------------------------------------------------------------
 # Video
 # ---------------------------------------------------------------------------
 *.mp4                filter=lfs diff=lfs merge=lfs -text

@@ -1,4 +1,4 @@
-const cap = "/assets/cap.png"
+const cap = `${import.meta.env.BASE_URL}assets/cap.png`
 
 const items = [
   'Education & University',

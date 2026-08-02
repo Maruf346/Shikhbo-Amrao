@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 
-const airb = "/assets/airb.png"
+const airb = `${import.meta.env.BASE_URL}assets/airb.png`
 
 // Framer Motion Variants & Helpers
 const fadeInUp = {

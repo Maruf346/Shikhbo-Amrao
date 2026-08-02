@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const logo = "/assets/logo.png"
+const logo = `${import.meta.env.BASE_URL}assets/logo.png`
 
 const navItems = [
   {

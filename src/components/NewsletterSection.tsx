@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
-const balloon = "/assets/airballoon1.png"
+const balloon = `${import.meta.env.BASE_URL}assets/airballoon1.png`
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState('')
