@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import logo from '../data/logo.png'; 
-// Or using path alias: import logo from '@/data/logo.png';
+
+const logo = "/assets/logo.png"
 
 const navItems = [
   {

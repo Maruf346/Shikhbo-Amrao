@@ -1,4 +1,4 @@
-import cap from '../data/cap.png'
+const cap = "/assets/cap.png"
 
 const items = [
   'Education & University',
@@ -27,7 +27,7 @@ export default function MarqueeSection() {
         {items.map((item, i) => (
           <div key={i} className="flex items-center gap-3 px-5 text-white font-semibold text-sm whitespace-nowrap">
             <img
-              src={cap.src || cap}
+              src={cap}
               alt="Cap Icon"
               className="w-5 h-5 object-contain flex-shrink-0"
             />

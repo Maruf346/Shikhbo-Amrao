@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import balloon from '../data/airballoon1.png'; 
+
+const balloon = "/assets/airballoon1.png"
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState('')
@@ -93,14 +94,11 @@ export default function NewsletterSection() {
           >
             <motion.div {...floatAnimSlow} className="w-full h-full relative">
               
-              {balloon ? (
-                <img
+              <img
                 src={balloon}
                 alt="Air Balloon"
                 className="w-full h-full object-contain rotate-[-8deg]"
               />
-              ) : null}
-              
             </motion.div>
           </motion.div>
 

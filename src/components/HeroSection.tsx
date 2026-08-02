@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import airb from '../data/airb.png'
+
+const airb = "/assets/airb.png"
 
 // Framer Motion Variants & Helpers
 const fadeInUp = {
@@ -83,7 +84,7 @@ export default function HeroSection() {
       >
         <motion.div {...floatAnimSlow} className="w-full h-full relative">
           <img
-            src={airb.src || airb}
+            src={airb}
             alt="Hot Air Balloon"
             className="w-full h-full object-contain drop-shadow-lg"
           />
