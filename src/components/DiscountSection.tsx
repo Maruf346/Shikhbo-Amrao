@@ -30,7 +30,7 @@ export default function DiscountSection() {
 
   return (
     <section
-      className="py-24 relative overflow-hidden"
+      className="py-16 sm:py-24 relative overflow-hidden"
       style={{
         backgroundImage: `url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&h=600&fit=crop')`,
         backgroundSize: 'cover',
@@ -48,10 +48,10 @@ export default function DiscountSection() {
         variants={containerVariants}
       >
         <motion.h2 
-          className="text-3xl lg:text-5xl font-extrabold text-white mb-5 leading-tight"
+          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-5 leading-tight"
           variants={itemVariants}
         >
-          Act Fast: 50% Off For The<br />First 50 Students!
+          Act Fast: 50% Off For The<br className="hidden sm:block" />First 50 Students!
         </motion.h2>
 
         <motion.p 
@@ -62,16 +62,16 @@ export default function DiscountSection() {
         </motion.p>
 
         <motion.div 
-          className="flex flex-wrap justify-center gap-4"
+          className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-4"
           variants={itemVariants}
         >
-          <a href="#courses" className="theme-btn text-base">
+          <a href="#courses" className="theme-btn justify-center text-base">
             Become a Student
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
             </svg>
           </a>
-          <a href="#" className="theme-btn style-2 text-base">
+          <a href="#" className="theme-btn style-2 justify-center text-base">
             Become a Teacher
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />

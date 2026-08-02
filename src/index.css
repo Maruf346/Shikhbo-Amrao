@@ -143,6 +143,14 @@ img {
   z-index: 9999;
 }
 
+@media (max-width: 480px) {
+  .theme-btn {
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
 .pointer-follower__dot {
   position: fixed;
   top: 0;

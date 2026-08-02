@@ -39,6 +39,7 @@ const testimonials = [
 export default function TestimonialsSection() {
   const [current, setCurrent] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
+  const [visibleCount, setVisibleCount] = useState(1)
 
   const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length)
   const next = () => setCurrent((c) => (c + 1) % testimonials.length)
@@ -52,10 +53,24 @@ export default function TestimonialsSection() {
     return () => clearInterval(timer)
   }, [isPaused, current])
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setVisibleCount(1)
+      } else {
+        setVisibleCount(3)
+      }
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   // Continuous infinite circular loop items display
   const getVisible = () => {
     const items = []
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < visibleCount; i++) {
       items.push({
         ...testimonials[(current + i) % testimonials.length],
         uniqueKey: `${(current + i) % testimonials.length}-${i}`,
@@ -120,7 +135,7 @@ export default function TestimonialsSection() {
                 <div className="text-xs text-gray-500">Google Reviews</div>
               </div>
             </div>
-            <a href="#" className="theme-btn justify-center">
+            <a href="#" className="theme-btn justify-center w-full sm:w-auto">
               All Testimonials
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />

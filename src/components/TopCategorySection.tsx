@@ -112,7 +112,7 @@ export default function TopCategorySection() {
 
   return (
     <section
-      className="py-20 relative overflow-hidden"
+      className="py-16 sm:py-20 relative overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #1b4d3a 0%, #0f3225 100%)' }}
       id="categories"
       onMouseEnter={() => setIsPaused(true)}
@@ -126,8 +126,8 @@ export default function TopCategorySection() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <span className="inline-block text-yellow-400 font-semibold text-sm uppercase tracking-widest mb-3">Top Category</span>
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-white">
-            Next-Gen Education &<br />Teaching Courses
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+            Next-Gen Education &<br className="hidden sm:block" />Teaching Courses
           </h2>
         </div>
 
@@ -142,7 +142,7 @@ export default function TopCategorySection() {
             {categories.map((cat) => (
               <div
                 key={cat.title}
-                className="flex-shrink-0 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-2 cursor-pointer group"
+                className="flex-shrink-0 rounded-2xl p-5 sm:p-7 transition-all duration-300 hover:-translate-y-2 cursor-pointer group"
                 style={{
                   width: `calc((100% - ${(visible - 1) * gap}px) / ${visible})`,
                   backgroundColor: 'rgba(255,255,255,0.08)',
