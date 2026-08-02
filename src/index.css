@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-@import 'tailwindcss';
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import "tailwindcss";
 
 :root {
   --primary: #1b4d3a;
@@ -18,7 +18,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #444;
   line-height: 1.7;
 }
@@ -84,7 +84,7 @@ img {
   position: relative;
 }
 .section-badge::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 28px;
   height: 3px;
@@ -134,3 +134,43 @@ img {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }
 ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+.pointer-follower {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.pointer-follower__dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 999px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  will-change: transform;
+}
+
+.pointer-follower.is-visible .pointer-follower__dot {
+  opacity: 1;
+}
+
+.pointer-follower__dot--front {
+  width: 10px;
+  height: 10px;
+  background: #1b6b57;
+}
+
+.pointer-follower__dot--back {
+  width: 34px;
+  height: 34px;
+  background: rgba(27, 107, 87, 0.28);
+  backdrop-filter: blur(2px);
+}
+
+@media (pointer: coarse) {
+  .pointer-follower {
+    display: none;
+  }
+}

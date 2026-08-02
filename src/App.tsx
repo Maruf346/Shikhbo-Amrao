@@ -1,5 +1,11 @@
-import HomePage from './pages/HomePage'
+import PointerFollower from "./components/PointerFollower"
+import HomePage from "./pages/HomePage"
 
 export default function App() {
-  return <HomePage />
+  return (
+    <>
+      <PointerFollower />
+      <HomePage />
+    </>
+  )
 }
