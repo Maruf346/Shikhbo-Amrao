@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 
 const logo = `${import.meta.env.BASE_URL}assets/logo.png`
+const qoderLabsLogo = `${import.meta.env.BASE_URL}assets/qoderlabs.png`
 
 const socialLinks = [
   { label: 'Facebook', path: 'M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z' },
@@ -179,6 +180,26 @@ export default function Footer() {
                 </a>
               </motion.li>
             </motion.ul>
+            <div className="mt-6 border-t border-white/10 pt-5">
+              <a
+                href="http://qoderlabs.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 text-sm text-gray-400 transition-colors hover:text-white"
+              >
+                <span className="w-9 h-9 rounded-full bg-white p-2 flex items-center justify-center shadow-md flex-shrink-0">
+                  <img
+                    src={qoderLabsLogo}
+                    alt="QoderLabs"
+                    className="w-full h-full object-contain"
+                  />
+                </span>
+                <span>
+                  Made with care by{' '}
+                  <span className="font-semibold text-white">QoderLabs</span>
+                </span>
+              </a>
+            </div>
           </div>
         </div>
 
