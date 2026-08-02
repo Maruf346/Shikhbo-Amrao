@@ -7,13 +7,17 @@ type Point = {
 
 const FAST_EASING = 0.28
 const SLOW_EASING = 0.14
+const INTERACTIVE_SELECTOR =
+  "button, a, input, select, textarea, summary, [role='button'], .theme-btn"
 
 export default function PointerFollower() {
   const [isVisible, setIsVisible] = useState(false)
   const [isFinePointer, setIsFinePointer] = useState(false)
+  const [isSuppressed, setIsSuppressed] = useState(false)
   const frontDotRef = useRef<HTMLDivElement | null>(null)
   const backDotRef = useRef<HTMLDivElement | null>(null)
   const isVisibleRef = useRef(false)
+  const isSuppressedRef = useRef(false)
   const targetRef = useRef<Point>({ x: 0, y: 0 })
   const frontPositionRef = useRef<Point>({ x: 0, y: 0 })
   const backPositionRef = useRef<Point>({ x: 0, y: 0 })
@@ -40,7 +44,9 @@ export default function PointerFollower() {
   useEffect(() => {
     if (!isFinePointer) {
       isVisibleRef.current = false
+      isSuppressedRef.current = false
       setIsVisible(false)
+      setIsSuppressed(false)
       return
     }
 
@@ -74,7 +80,26 @@ export default function PointerFollower() {
       backPositionRef.current = { x, y }
     }
 
+    const setSuppressedState = (nextSuppressed: boolean) => {
+      isSuppressedRef.current = nextSuppressed
+      setIsSuppressed(nextSuppressed)
+    }
+
+    const isInteractiveTarget = (target: EventTarget | null) => {
+      return target instanceof Element && target.closest(INTERACTIVE_SELECTOR) !== null
+    }
+
     const handlePointerMove = (event: PointerEvent) => {
+      const shouldSuppress = isInteractiveTarget(event.target)
+
+      if (shouldSuppress !== isSuppressedRef.current) {
+        setSuppressedState(shouldSuppress)
+      }
+
+      if (shouldSuppress) {
+        return
+      }
+
       if (!isVisibleRef.current) {
         syncPositions(event.clientX, event.clientY)
         isVisibleRef.current = true
@@ -90,11 +115,16 @@ export default function PointerFollower() {
 
     const handlePointerLeave = () => {
       isVisibleRef.current = false
+      isSuppressedRef.current = false
       setIsVisible(false)
+      setIsSuppressed(false)
     }
 
     const handlePointerEnter = (event: PointerEvent) => {
+      const shouldSuppress = isInteractiveTarget(event.target)
+
       syncPositions(event.clientX, event.clientY)
+      setSuppressedState(shouldSuppress)
       isVisibleRef.current = true
       setIsVisible(true)
     }
@@ -124,7 +154,7 @@ export default function PointerFollower() {
 
   return (
     <div
-      className={`pointer-follower ${isVisible ? "is-visible" : ""}`}
+      className={`pointer-follower ${isVisible && !isSuppressed ? "is-visible" : ""}`}
       aria-hidden="true"
     >
       <div ref={backDotRef} className="pointer-follower__dot pointer-follower__dot--back" />
