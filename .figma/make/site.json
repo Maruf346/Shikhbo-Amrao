@@ -1,0 +1,10 @@
+{
+  "description": "This platform offers a fully functional and visually identical landing page for educational services, tailored for users seeking seamless access to learning resources.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
