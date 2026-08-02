@@ -95,7 +95,7 @@ export default function Navbar() {
             </button>
             <a 
               href="#courses" 
-              className="theme-btn hidden lg:inline-flex items-center gap-3 pl-6 pr-1.5 py-1.5 rounded-full"
+              className="theme-btn desktop-trial-btn items-center gap-3 pl-6 pr-1.5 py-1.5 rounded-full"
             >
               Start Free Trial
               <span className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center flex-shrink-0 shadow-sm">
