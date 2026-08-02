@@ -203,7 +203,7 @@ export default function BlogSection() {
                   <div className="px-1 flex-1 flex flex-col justify-between">
                     <div>
                       {/* Meta information */}
-                      <div className="flex items-center gap-4 text-xs font-medium text-gray-700 mb-3">
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-medium text-gray-700 mb-3">
                         <span className="flex items-center gap-1.5">
                           <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path

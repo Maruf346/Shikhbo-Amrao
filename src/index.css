@@ -21,6 +21,7 @@ body {
   font-family: "Poppins", sans-serif;
   color: #444;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 a {

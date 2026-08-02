@@ -103,7 +103,7 @@ export default function TestimonialsSection() {
             </motion.h2>
           </div>
 
-          <motion.div variants={childFade} className="flex items-center gap-6">
+          <motion.div variants={childFade} className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full flex items-center justify-center bg-[#e8f4f0]">
                 {/* Google Logo Icon */}
@@ -120,7 +120,7 @@ export default function TestimonialsSection() {
                 <div className="text-xs text-gray-500">Google Reviews</div>
               </div>
             </div>
-            <a href="#" className="theme-btn">
+            <a href="#" className="theme-btn justify-center">
               All Testimonials
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
@@ -182,7 +182,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Arrows */}
-        <div className="flex gap-3">
+        <div className="flex justify-center sm:justify-start gap-3">
           <button
             onClick={prev}
             className="w-11 h-11 rounded-full flex items-center justify-center transition-all border"

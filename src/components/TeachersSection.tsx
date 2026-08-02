@@ -101,7 +101,7 @@ export default function TeachersSection() {
 
         {/* Animated Cards Grid (Sequential One-by-One Reveal) */}
         <motion.div
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -117,7 +117,7 @@ export default function TeachersSection() {
                 src={t.img}
                 alt={t.name}
                 className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                style={{ height: '320px' }}
+                style={{ height: 'min(320px, 78vw)' }}
               />
               {/* Name overlay */}
               <div

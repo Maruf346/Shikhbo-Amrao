@@ -183,9 +183,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
           <p className="text-gray-500 text-sm">Copyright © 2026 Shikhbo Amrao. All Rights Reserved.</p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <a href="#" className="text-gray-500 text-sm hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="text-gray-500 text-sm hover:text-white transition-colors">Terms of Service</a>
           </div>

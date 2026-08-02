@@ -192,12 +192,12 @@ export default function WhyChooseUsSection() {
           </div>
 
           {/* Right Column: Floating Images & Yellow Card */}
-          <div className="relative flex justify-center lg:justify-end items-center py-10 lg:ml-auto">
+          <div className="relative flex justify-center lg:justify-end items-center py-10 lg:ml-auto min-h-[390px] sm:min-h-[560px]">
             {/* Background Outer Ring */}
-            <div className="absolute w-[360px] h-[360px] sm:w-[520px] sm:h-[520px] rounded-full bg-[#EAF3F0] -z-10" />
+            <div className="absolute w-[290px] h-[290px] sm:w-[520px] sm:h-[520px] rounded-full bg-[#EAF3F0] -z-10" />
 
             {/* Main Center Circular Image */}
-            <div className="w-[380px] h-[380px] sm:w-[480px] sm:h-[480px] rounded-full overflow-hidden shadow-lg border-8 border-gray-200">
+            <div className="w-[280px] h-[280px] sm:w-[480px] sm:h-[480px] rounded-full overflow-hidden shadow-lg border-8 border-gray-200">
               <img
                 src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=600&fit=crop"
                 alt="Student listening with headphones"
@@ -206,7 +206,7 @@ export default function WhyChooseUsSection() {
             </div>
 
             {/* Top-Left Floating Circle Image */}
-            <div className="absolute top-0 -left-2 sm:left-2 lg:-left-6 w-36 h-36 sm:w-44 sm:h-44 rounded-full border-8 border-gray-200 shadow-xl overflow-hidden animate-float-y">
+            <div className="absolute top-4 left-0 sm:top-0 sm:left-2 lg:-left-6 w-24 h-24 sm:w-44 sm:h-44 rounded-full border-4 sm:border-8 border-gray-200 shadow-xl overflow-hidden animate-float-y">
               <img
                 src="https://images.unsplash.com/photo-1719245307966-1d0b89921af4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Student studying at table"
@@ -215,7 +215,7 @@ export default function WhyChooseUsSection() {
             </div>
 
             {/* Bottom-Left Floating Circle Image */}
-            <div className="absolute -bottom-4 left-0 sm:left-4 lg:-left-4 w-40 h-40 sm:w-48 sm:h-48 rounded-full border-8 border-gray-200 shadow-xl overflow-hidden animate-float-x">
+            <div className="absolute bottom-5 left-1 sm:-bottom-4 sm:left-4 lg:-left-4 w-28 h-28 sm:w-48 sm:h-48 rounded-full border-4 sm:border-8 border-gray-200 shadow-xl overflow-hidden animate-float-x">
               <img
                 src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Group studying together"
@@ -224,8 +224,8 @@ export default function WhyChooseUsSection() {
             </div>
 
             {/* Floating Yellow Badge Card with Smooth Number Counter */}
-            <div className="absolute top-1/2 -translate-y-1/2 -right-8 sm:-right-12 lg:-right-36 bg-[#FFA826] text-black px-9 py-6 rounded-xl shadow-xl flex items-center gap-3 animate-float-x">
-              <span className="font-semibold text-3xl lg:text-4xl tracking-tight">
+            <div className="absolute bottom-6 right-1 sm:top-1/2 sm:bottom-auto sm:-translate-y-1/2 sm:-right-12 lg:-right-36 bg-[#FFA826] text-black px-5 sm:px-9 py-4 sm:py-6 rounded-xl shadow-xl flex items-center gap-3 animate-float-x">
+              <span className="font-semibold text-2xl sm:text-3xl lg:text-4xl tracking-tight">
                 <CounterNumber target={92} duration={2} />
               </span>
               <span className="text-xs font-normal leading-snug">

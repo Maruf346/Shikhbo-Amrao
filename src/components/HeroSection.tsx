@@ -68,7 +68,7 @@ function CountUp({ target, duration = 2000, suffix = '+' }) {
 export default function HeroSection() {
   return (
     <section
-      className="relative overflow-hidden py-16 lg:py-20 min-h-[660px] flex items-center"
+      className="relative overflow-hidden py-14 sm:py-16 lg:py-20 lg:min-h-[660px] flex items-center"
       style={{
         background: 'radial-gradient(circle at 80% 20%, #e2f4ed 0%, #fdf8f0 50%, #fdf1e4 100%)',
       }}
@@ -80,7 +80,7 @@ export default function HeroSection() {
         initial="hidden"
         animate="visible"
         variants={fadeInUp}
-        className="absolute top-6 left-6 lg:top-10 lg:left-30 w-16 h-16 lg:w-24 lg:h-24 pointer-events-none z-10"
+        className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-10 lg:left-30 w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24 pointer-events-none z-10"
       >
         <motion.div {...floatAnimSlow} className="w-full h-full relative">
           <img
@@ -92,7 +92,7 @@ export default function HeroSection() {
       </motion.div>
 
       {/* 2. Bottom Left: Orange Hollow Ring */}
-      <div className="absolute bottom-20 left-12 lg:left-34 pointer-events-none float-y">
+      <div className="absolute bottom-20 left-12 lg:left-34 pointer-events-none float-y hidden sm:block">
         <div className="w-10 h-10 rounded-full border-[4.5px] border-[#f3ab27]" />
       </div>
 
@@ -113,7 +113,7 @@ export default function HeroSection() {
       </div>
 
       {/* 4. Top Right: Book Icon & Dot */}
-      <div className="absolute top-8 right-12 lg:right-24 flex flex-col items-center gap-2 pointer-events-none float-y">
+      <div className="absolute top-8 right-8 lg:right-24 hidden sm:flex flex-col items-center gap-2 pointer-events-none float-y">
         <div className="w-3.5 h-3.5 rounded-full bg-[#003d2b] opacity-80" />
         <svg
           className="w-14 h-14 text-[#003d2b] -rotate-12"
@@ -131,22 +131,22 @@ export default function HeroSection() {
       </div>
 
       {/* 5. Bottom Right: Dark Green Triangle */}
-      <div className="absolute bottom-10 right-10 lg:right-20 pointer-events-none float-x">
+      <div className="absolute bottom-10 right-10 lg:right-20 pointer-events-none float-x hidden sm:block">
         <svg className="w-18 h-18 text-[#003d2b] fill-current rotate-[215deg]" viewBox="0 0 24 24">
           <path d="M3 3 L22 12 L10 22 Z" />
         </svg>
       </div>
 
       {/* ================= MAIN CONTAINER ================= */}
-      <div className="max-w-7xl mx-auto pl-10 lg:pl-20 pr-6 w-full relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:pl-20 lg:pr-6 w-full relative z-10">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* LEFT COLUMN: TEXT & CTA */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6 text-center sm:text-left">
             <div className="inline-block px-4 py-1.5 rounded-full text-xs font-normal mb-4 bg-[#dbe8e3] text-[#2c5246]">
               Welcome to "Shikhbo Amrao"
             </div>
 
-            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-[#111827] leading-[1.15] mb-6 tracking-tight">
+            <h1 className="text-3xl sm:text-5xl xl:text-6xl font-bold text-[#111827] leading-[1.15] mb-6 tracking-tight">
               Learn From The
               <br />
               Top Sites Around
@@ -154,7 +154,7 @@ export default function HeroSection() {
               The World
             </h1>
 
-            <p className="text-gray-600 text-sm sm:text-base mb-8 leading-relaxed max-w-md font-normal">
+            <p className="text-gray-600 text-sm sm:text-base mb-8 leading-relaxed max-w-md mx-auto sm:mx-0 font-normal">
               Education is the foundation of personal societal growth, empowering individuals with
               knowledge, skills critical empowering thinking.
             </p>
@@ -173,16 +173,16 @@ export default function HeroSection() {
           </div>
 
           {/* RIGHT COLUMN: ARCH IMAGES & FLOATING CARDS */}
-          <div className="lg:col-span-6 relative flex justify-center items-center pt-8 lg:pt-0">
+          <div className="lg:col-span-6 relative flex justify-center items-center pt-6 sm:pt-8 lg:pt-0 w-full max-w-[390px] sm:max-w-none mx-auto">
             {/* FLOATING CARD 1: STUDENT COUNTER */}
-            <div className="absolute top-0 left-2 sm:left-6 z-20 bg-white rounded-full shadow-lg px-6 py-4 flex items-center gap-4 float-x border border-gray-100">
+            <div className="absolute top-0 left-0 sm:left-6 z-20 bg-white rounded-full shadow-lg px-4 sm:px-6 py-3 sm:py-4 flex items-center gap-3 sm:gap-4 float-x border border-gray-100">
               <div className="pl-1">
-                <div className="font-semibold text-xl leading-none text-[#f3ab27]">
+                <div className="font-semibold text-lg sm:text-xl leading-none text-[#f3ab27]">
                   <CountUp target={5436} duration={2200} />
                 </div>
                 <div className="text-xs text-gray-500 font-medium mt-0.5">Student</div>
               </div>
-              <div className="flex items-center -space-x-2.5">
+              <div className="hidden min-[420px]:flex items-center -space-x-2.5">
                 <img
                   src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=60&h=60&fit=crop&crop=face"
                   alt=""
@@ -210,7 +210,7 @@ export default function HeroSection() {
             </div>
 
             {/* FLOATING CARD 2: SUCCESS COURSES */}
-            <div className="absolute bottom-2 right-2 sm:right-6 z-20 bg-white rounded-full shadow-lg px-6 py-2.5 float-y border border-gray-100 text-center">
+            <div className="absolute bottom-1 right-0 sm:right-6 z-20 bg-white rounded-full shadow-lg px-4 sm:px-6 py-2.5 float-y border border-gray-100 text-center">
               <div className="font-semibold text-lg leading-tight text-[#003d2b]">
                 <CountUp target={450} duration={2000} />
               </div>
@@ -220,11 +220,11 @@ export default function HeroSection() {
             </div>
 
             {/* ARCH IMAGES */}
-            <div className="flex items-end gap-6 sm:gap-8 pt-4 pl-4">
+            <div className="flex items-end justify-center gap-3 sm:gap-8 pt-12 sm:pt-4 pl-2 sm:pl-4 w-full">
               {/* Left Arch Image */}
               <div className="relative flex-shrink-0">
                 <div className="absolute inset-0 -translate-x-3.5 translate-y-2.5 rounded-t-full rounded-b-full border-2 border-[#003d2b] pointer-events-none z-0" />
-                <div className="relative z-10 w-40 sm:w-48 h-64 sm:h-80 rounded-t-full rounded-b-full overflow-hidden bg-[#f2a123] shadow-md">
+                <div className="relative z-10 w-[38vw] max-w-40 sm:w-48 h-[62vw] max-h-64 sm:h-80 sm:max-h-none rounded-t-full rounded-b-full overflow-hidden bg-[#f2a123] shadow-md">
                   <img
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80"
                     alt="Student with glasses"
@@ -236,7 +236,7 @@ export default function HeroSection() {
               {/* Right Arch Image */}
               <div className="relative flex-shrink-0">
                 <div className="absolute inset-0 -translate-x-3.5 translate-y-2.5 rounded-t-full rounded-b-full border-2 border-[#003d2b] pointer-events-none z-0" />
-                <div className="relative z-10 w-48 sm:w-60 h-80 sm:h-[400px] rounded-t-full rounded-b-full overflow-hidden bg-[#48c5cd] shadow-md">
+                <div className="relative z-10 w-[43vw] max-w-48 sm:w-60 h-[70vw] max-h-80 sm:h-[400px] sm:max-h-none rounded-t-full rounded-b-full overflow-hidden bg-[#48c5cd] shadow-md">
                   <img
                     src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&auto=format&fit=crop&q=80"
                     alt="Student with headphones"

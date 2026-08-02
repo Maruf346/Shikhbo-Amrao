@@ -70,7 +70,7 @@ export default function NewsletterSection() {
     <section className="py-20 bg-white overflow-hidden" id="newsletter">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
-          className="relative rounded-[2.5rem] bg-[#014738] py-20 px-6 sm:px-12 text-center overflow-hidden shadow-2xl"
+          className="relative rounded-[1.75rem] sm:rounded-[2.5rem] bg-[#014738] py-16 sm:py-20 px-4 sm:px-12 text-center overflow-hidden shadow-2xl"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -182,7 +182,7 @@ export default function NewsletterSection() {
             <motion.form
               variants={fadeInUp}
               onSubmit={handleSubmit}
-              className="relative flex flex-col sm:flex-row items-center bg-white p-2 rounded-full shadow-2xl max-w-xl mx-auto gap-2"
+              className="relative flex flex-col sm:flex-row items-center bg-white p-2 rounded-3xl sm:rounded-full shadow-2xl max-w-xl mx-auto gap-2"
             >
               {/* Mail Icon Inside Input */}
               <div className="pl-4 text-gray-400 hidden sm:block">

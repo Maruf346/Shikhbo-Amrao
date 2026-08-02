@@ -58,17 +58,17 @@ export default function AboutSection() {
   }
 
   return (
-    <section className="py-20 bg-white overflow-hidden" id="about">
+    <section className="py-16 sm:py-20 bg-white overflow-hidden" id="about">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left: Circular Image Composition */}
-          <div className="lg:col-span-6 relative flex justify-center items-center py-6">
+          <div className="lg:col-span-6 relative flex justify-center items-center py-6 min-h-[360px] sm:min-h-[560px]">
             {/* Large Background Soft Circle */}
-            <div className="absolute w-[340px] h-[340px] sm:w-[400px] sm:h-[400px] rounded-full bg-[#e2f4ed] -z-10" />
+            <div className="absolute w-[270px] h-[270px] sm:w-[400px] sm:h-[400px] rounded-full bg-[#e2f4ed] -z-10" />
 
             {/* Main Large Circular Image */}
-            <div className="w-[320px] h-[320px] sm:w-[500px] sm:h-[500px] rounded-full overflow-hidden border-8 border-gray-200 shadow-xl relative">
+            <div className="w-[260px] h-[260px] sm:w-[500px] sm:h-[500px] rounded-full overflow-hidden border-8 border-gray-200 shadow-xl relative">
               <img
                 src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Student studying with headphones"
@@ -77,7 +77,7 @@ export default function AboutSection() {
             </div>
 
             {/* Top-Right Small Circular Image (Floating) */}
-            <div className="absolute top-2 right-2 sm:right-8 w-34 h-34 sm:w-42 sm:h-42 rounded-full overflow-hidden border-8 border-gray-200 shadow-2xl float-y">
+            <div className="absolute top-2 right-3 sm:right-8 w-24 h-24 sm:w-42 sm:h-42 rounded-full overflow-hidden border-4 sm:border-8 border-gray-200 shadow-2xl float-y">
               <img
                 src="https://plus.unsplash.com/premium_photo-1691962725086-d1590e379139?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Students collaborating"
@@ -86,7 +86,7 @@ export default function AboutSection() {
             </div>
 
             {/* Bottom-Right Small Circular Image (Floating) */}
-            <div className="absolute bottom-0 right-4 sm:right-12 w-52 h-52 sm:w-46 sm:h-46 rounded-full overflow-hidden border-8 border-gray-200 shadow-2xl float-x">
+            <div className="absolute bottom-4 right-5 sm:bottom-0 sm:right-12 w-32 h-32 sm:w-46 sm:h-46 rounded-full overflow-hidden border-4 sm:border-8 border-gray-200 shadow-2xl float-x">
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300&h=300&fit=crop"
                 alt="Group studying around laptop"
@@ -130,10 +130,10 @@ export default function AboutSection() {
             {/* Stats Row with Animated Counter */}
             <motion.div 
               variants={itemVariants}
-              className="grid grid-cols-3 gap-4 mb-8 pb-6 border-b border-gray-100"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 pb-6 border-b border-gray-100"
             >
               {stats.map((s, i) => (
-                <div key={s.label} className={i < stats.length - 1 ? 'border-r border-gray-200 pr-2' : ''}>
+                <div key={s.label} className={i < stats.length - 1 ? 'sm:border-r border-gray-200 pr-2' : ''}>
                   <div className="text-2xl sm:text-3xl font-semibold text-[#111827] mb-1">
                     <Counter value={s.target} suffix={s.suffix} />
                   </div>

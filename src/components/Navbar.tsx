@@ -34,15 +34,15 @@ export default function Navbar() {
   return (
     <>
       <header className="sticky top-0 z-50 bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-3 h-16 sm:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-16 h-16 rounded-full flex items-center justify-center overflow-hidden" style={{ backgroundColor: 'var(--primary)' }}>
+          <a href="#" className="flex items-center gap-2 min-w-0 flex-shrink-0">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center overflow-hidden flex-shrink-0" style={{ backgroundColor: 'var(--primary)' }}>
               {logo ? (
                 <img src={logo} alt="Shikhbo Amrao Logo" className="w-full h-full object-cover" />
               ) : null}
             </div>
-            <span className="font-bold text-xl" style={{ color: 'var(--primary)' }}>
+            <span className="font-bold text-lg sm:text-xl leading-tight truncate" style={{ color: 'var(--primary)' }}>
               Shikhbo <span className="text-gray-800">Amrao</span>
             </span>
           </a>
@@ -83,7 +83,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right side */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={() => setSearchOpen(!searchOpen)}
               className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
@@ -120,21 +120,21 @@ export default function Navbar() {
         {/* Search bar */}
         {searchOpen && (
           <div className="border-t border-gray-100 px-4 py-3 bg-white">
-            <div className="max-w-xl mx-auto flex gap-2">
+            <div className="max-w-xl mx-auto flex flex-col sm:flex-row gap-2">
               <input
                 type="text"
                 placeholder="Search courses, topics..."
                 className="flex-1 px-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:border-[var(--primary)]"
                 autoFocus
               />
-              <button className="theme-btn py-2 px-5 text-sm">Search</button>
+              <button className="theme-btn py-2 px-5 text-sm justify-center">Search</button>
             </div>
           </div>
         )}
 
         {/* Mobile Nav */}
         {mobileOpen && (
-          <div className="lg:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-2">
+          <div className="lg:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-2 max-h-[calc(100vh-4rem)] overflow-y-auto">
             {navItems.map((item) => (
               <div key={item.label}>
                 <button

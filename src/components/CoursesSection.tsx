@@ -69,7 +69,7 @@ export default function CoursesSection() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className="px-5 py-2 rounded-full text-sm font-normal transition-all duration-300 active:scale-95"
+                className="px-4 sm:px-5 py-2 rounded-full text-sm font-normal transition-all duration-300 active:scale-95"
                 style={{
                   backgroundColor: activeTab === tab.id ? 'var(--primary)' : '#f0f2f5',
                   color: activeTab === tab.id ? '#fff' : '#555',
@@ -138,7 +138,7 @@ function CourseCard({ course }: { course: (typeof courses)[0] }) {
         </h3>
 
         {/* Meta */}
-        <div className="flex gap-4 text-sm text-gray-500 mb-4">
+        <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-500 mb-4">
           <span className="flex items-center gap-1.5">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
@@ -158,14 +158,14 @@ function CourseCard({ course }: { course: (typeof courses)[0] }) {
         <div className="border-t border-gray-200/80 my-3" />
 
         {/* Instructor + price */}
-        <div className="flex items-center justify-between mb-4 mt-auto">
-          <div className="flex items-center gap-2">
+        <div className="flex items-center justify-between gap-3 mb-4 mt-auto">
+          <div className="flex items-center gap-2 min-w-0">
             <img
               src={course.instructorImg}
               alt={course.instructor}
               className="w-8 h-8 rounded-full object-cover"
             />
-            <span className="text-sm text-gray-600 font-medium">{course.instructor}</span>
+            <span className="text-sm text-gray-600 font-medium truncate">{course.instructor}</span>
           </div>
           <span className="font-bold text-lg" style={{ color: 'var(--primary)' }}>
             {course.price}
