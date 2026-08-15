@@ -61,7 +61,7 @@ export default function AboutSection() {
     <section className="py-16 sm:py-20 bg-white overflow-hidden" id="about">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+
           {/* Left: Circular Image Composition */}
           <div className="lg:col-span-6 relative flex justify-center items-center py-6 min-h-[360px] sm:min-h-[560px]">
             {/* Large Background Soft Circle */}
@@ -104,7 +104,7 @@ export default function AboutSection() {
             variants={containerVariants}
           >
             {/* Badge */}
-            <motion.span 
+            <motion.span
               variants={itemVariants}
               className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold mb-4 bg-[#dbe8e3] text-[#2c5246]"
             >
@@ -112,7 +112,7 @@ export default function AboutSection() {
             </motion.span>
 
             {/* Heading */}
-            <motion.h3 
+            <motion.h3
               variants={itemVariants}
               className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#111827] leading-[1.15] mb-5 tracking-tight"
             >
@@ -120,7 +120,7 @@ export default function AboutSection() {
             </motion.h3>
 
             {/* Description Paragraph */}
-            <motion.p 
+            <motion.p
               variants={itemVariants}
               className="text-gray-600 text-sm sm:text-base mb-8 leading-relaxed font-normal"
             >
@@ -128,7 +128,7 @@ export default function AboutSection() {
             </motion.p>
 
             {/* Stats Row with Animated Counter */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 pb-6 border-b border-gray-100"
             >
@@ -143,12 +143,12 @@ export default function AboutSection() {
             </motion.div>
 
             {/* CTA + Author Row (Appears sequentially last) */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="flex items-center gap-6 flex-wrap"
             >
-              <a 
-                href="#courses" 
+              <a
+                href="#courses"
                 className="inline-flex items-center gap-4 bg-[#003d2b] hover:bg-[#002b1f] text-white pl-7 pr-2 py-2 rounded-full font-semibold text-sm transition-all shadow-md group"
               >
                 <span className="text-white">Explore More</span>
@@ -162,12 +162,12 @@ export default function AboutSection() {
               <div className="flex items-center gap-3">
                 <img
                   src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=T_fR9kgAAAAJ&citpid=3"
-                  alt="Maruf Hossain"
+                  alt="Selim Reza Ripon"
                   className="w-12 h-12 rounded-full object-cover border-2 border-[#003d2b]"
                 />
                 <div>
-                  <div className="font-bold text-sm text-[#111827]">Maruf Hossain</div>
-                  <div className="text-xs text-gray-500 font-medium">Co, Founder</div>
+                  <div className="font-bold text-sm text-[#111827]">Selim Reza Ripon</div>
+                  <div className="text-xs text-gray-500 font-medium">Co-Founder</div>
                 </div>
               </div>
             </motion.div>
