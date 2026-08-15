@@ -161,7 +161,7 @@ export default function AboutSection() {
 
               <div className="flex items-center gap-3">
                 <img
-                  src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=T_fR9kgAAAAJ&citpid=3"
+                  src="/selim.jpg"
                   alt="Selim Reza Ripon"
                   className="w-12 h-12 rounded-full object-cover border-2 border-[#003d2b]"
                 />
