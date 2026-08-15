@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useInView, animate } from 'framer-motion'
-const cofounderLogo = `${import.meta.env.BASE_URL}assets/selim.png`
+const cofounderLogo = `${import.meta.env.BASE_URL}assets/selim.jpg`
 
 // Count-up Component for Stats
 function Counter({ value, suffix = '+' }) {
