@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useInView, animate } from 'framer-motion'
+const cofounderLogo = `${import.meta.env.BASE_URL}assets/selim.png`
 
 // Count-up Component for Stats
 function Counter({ value, suffix = '+' }) {
@@ -161,7 +162,7 @@ export default function AboutSection() {
 
               <div className="flex items-center gap-3">
                 <img
-                  src="/selim.jpg"
+                  src={cofounderLogo}
                   alt="Selim Reza Ripon"
                   className="w-12 h-12 rounded-full object-cover border-2 border-[#003d2b]"
                 />
