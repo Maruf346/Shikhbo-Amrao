@@ -1,7 +1,9 @@
 {
-  "description": "This platform offers a fully functional and visually identical landing page for educational services, tailored for users seeking seamless access to learning resources.",
+  "title": "Shikhbo Amrao | Best Coaching Center in Bangladesh",
+  "description": "Join Shikhbo Amrao, the leading coaching center in Bangladesh. We offer premium educational services, academic tutoring, and university admission preparation to help students achieve their dreams.",
+  "language": "en",
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
     "addBypassLinks": false,
