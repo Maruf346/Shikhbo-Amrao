@@ -5,34 +5,28 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const testimonials = [
   {
-    quote: '"Working with several word the templates the last years only can say this is best every level use it for my reviews that I have already are company and reviews."',
-    name: 'Marvin McKinney',
-    role: 'Product Manager',
-    img: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=60&h=60&fit=crop&crop=face',
+    quote: '"Shikhbo Amrao made ICT and Science concepts so clear for my HSC preparation. The instructors explain every topic step-by-step!"',
+    name: 'Arafat Rahman',
+    role: 'HSC Candidate (Science)',
+    img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&h=120&fit=crop&crop=face',
   },
   {
-    quote: '"Working with several word the templates the last years only can say this is best every level use it for my reviews that I have already are company and reviews."',
-    name: 'Lauren Janet',
-    role: 'Founder CEO',
-    img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&crop=face',
+    quote: '"As a guardian, I am very satisfied with their progress tracking and structured guidance. My daughter has built genuine interest in learning."',
+    name: 'Nusrat Jahan',
+    role: 'Guardian of Class 8 Student',
+    img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop&crop=face',
   },
   {
-    quote: '"Working with several word the templates the last years only can say this is best every level use it for my reviews that I have already are company and reviews."',
-    name: 'Ramon Joshua',
-    role: 'Product Manager',
-    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face',
+    quote: '"The CSE programming & web development lessons are practical and easy to follow. Perfect platform for acquiring real skills early on."',
+    name: 'Tanvir Hossain',
+    role: 'CSE Undergraduate Student',
+    img: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120&h=120&fit=crop&crop=face',
   },
   {
-    quote: '"The course structure and interactive sessions exceeded my expectations completely. Highly recommended for anyone looking to upskill quickly."',
-    name: 'Eleanor Pena',
-    role: 'UI/UX Designer',
-    img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=60&h=60&fit=crop&crop=face',
-  },
-  {
-    quote: '"An outstanding experience from start to finish. The community support and mentor guidance made all the difference in my learning journey."',
-    name: 'Cody Fisher',
-    role: 'Full Stack Developer',
-    img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=face',
+    quote: '"Their live doubt-solving sessions helped me clear all my difficult topics before board exams. Highly recommended for every student!"',
+    name: 'Farhana Yeasmin',
+    role: 'SSC Examinee',
+    img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&h=120&fit=crop&crop=face',
   },
 ]
 
