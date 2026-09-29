@@ -147,16 +147,15 @@ export default function HeroSection() {
             </div>
 
             <h1 className="text-4xl sm:text-6xl xl:text-7xl font-bold text-[#111827] leading-[1.12] mb-7 tracking-tight">
-              Learn From The
+              Learn Better,
               <br />
-              Top Sites Around
+              Grow Together,
               <br />
-              The World
+              Succeed Everyday
             </h1>
 
             <p className="text-gray-600 text-base sm:text-lg lg:text-xl mb-10 leading-relaxed max-w-lg mx-auto sm:mx-0 font-normal">
-              Education is the foundation of personal societal growth, empowering individuals with
-              knowledge, skills critical empowering thinking.
+              Empowering students with quality education, interactive lessons, and dedicated guidance. Building a brighter future for every learner.
             </p>
 
             <a

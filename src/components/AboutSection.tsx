@@ -117,7 +117,7 @@ export default function AboutSection() {
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#111827] leading-[1.12] mb-6 tracking-tight"
             >
-              Transforming Learning Into Lasting Impact
+              Making Learning Easy, Effective & Enjoyable
             </motion.h3>
 
             {/* Description Paragraph */}
@@ -125,7 +125,7 @@ export default function AboutSection() {
               variants={itemVariants}
               className="text-gray-600 text-base sm:text-lg lg:text-xl mb-10 leading-relaxed font-normal"
             >
-              At Shikhbo Amrao, we believe in the power of education to transform lives. Our platform combines expert instructors with innovative methods, empowering students with the knowledge and skills they need to thrive in the modern world.
+              At Shikhbo Amrao, we connect students with passionate teachers and structured courses. We help young learners build confidence, master core subjects, and achieve academic goals step by step.
             </motion.p>
 
             {/* Stats Row with Animated Counter */}
