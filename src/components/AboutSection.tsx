@@ -59,17 +59,17 @@ export default function AboutSection() {
   }
 
   return (
-    <section className="py-16 sm:py-20 bg-white overflow-hidden" id="about">
+    <section className="py-24 sm:py-32 bg-white overflow-hidden" id="about">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-12 gap-14 lg:gap-20 items-center">
 
           {/* Left: Circular Image Composition */}
-          <div className="lg:col-span-6 relative flex justify-center items-center py-6 min-h-[360px] sm:min-h-[560px]">
+          <div className="lg:col-span-6 relative flex justify-center items-center py-8 min-h-[420px] sm:min-h-[640px]">
             {/* Large Background Soft Circle */}
-            <div className="absolute w-[270px] h-[270px] sm:w-[400px] sm:h-[400px] rounded-full bg-[#e2f4ed] -z-10" />
+            <div className="absolute w-[320px] h-[320px] sm:w-[480px] sm:h-[480px] rounded-full bg-[#e2f4ed] -z-10" />
 
             {/* Main Large Circular Image */}
-            <div className="w-[260px] h-[260px] sm:w-[500px] sm:h-[500px] rounded-full overflow-hidden border-8 border-gray-200 shadow-xl relative">
+            <div className="w-[300px] h-[300px] sm:w-[560px] sm:h-[560px] rounded-full overflow-hidden border-8 sm:border-[12px] border-gray-200 shadow-2xl relative">
               <img
                 src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Student studying with headphones"
@@ -78,7 +78,7 @@ export default function AboutSection() {
             </div>
 
             {/* Top-Right Small Circular Image (Floating) */}
-            <div className="absolute top-2 right-3 sm:right-8 w-24 h-24 sm:w-42 sm:h-42 rounded-full overflow-hidden border-4 sm:border-8 border-gray-200 shadow-2xl float-y">
+            <div className="absolute top-0 right-1 sm:right-2 w-28 h-28 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 sm:border-8 border-gray-200 shadow-2xl float-y">
               <img
                 src="https://plus.unsplash.com/premium_photo-1691962725086-d1590e379139?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Students collaborating"
@@ -87,9 +87,9 @@ export default function AboutSection() {
             </div>
 
             {/* Bottom-Right Small Circular Image (Floating) */}
-            <div className="absolute bottom-4 right-5 sm:bottom-0 sm:right-12 w-32 h-32 sm:w-46 sm:h-46 rounded-full overflow-hidden border-4 sm:border-8 border-gray-200 shadow-2xl float-x">
+            <div className="absolute bottom-2 right-2 sm:bottom-0 sm:right-6 w-36 h-36 sm:w-52 sm:h-52 rounded-full overflow-hidden border-4 sm:border-8 border-gray-200 shadow-2xl float-x">
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300&h=300&fit=crop"
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=400&fit=crop"
                 alt="Group studying around laptop"
                 className="w-full h-full object-cover"
               />
@@ -107,7 +107,7 @@ export default function AboutSection() {
             {/* Badge */}
             <motion.span
               variants={itemVariants}
-              className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold mb-4 bg-[#dbe8e3] text-[#2c5246]"
+              className="inline-block px-5 py-2 rounded-full text-sm font-semibold mb-5 bg-[#dbe8e3] text-[#2c5246]"
             >
               About Us
             </motion.span>
@@ -115,7 +115,7 @@ export default function AboutSection() {
             {/* Heading */}
             <motion.h3
               variants={itemVariants}
-              className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#111827] leading-[1.15] mb-5 tracking-tight"
+              className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#111827] leading-[1.12] mb-6 tracking-tight"
             >
               Transforming Learning Into Lasting Impact
             </motion.h3>
@@ -123,7 +123,7 @@ export default function AboutSection() {
             {/* Description Paragraph */}
             <motion.p
               variants={itemVariants}
-              className="text-gray-600 text-sm sm:text-base mb-8 leading-relaxed font-normal"
+              className="text-gray-600 text-base sm:text-lg lg:text-xl mb-10 leading-relaxed font-normal"
             >
               At Amrao Shikhbo, we believe in the power of education to transform lives. Our platform combines expert instructors with innovative methods, empowering students with the knowledge and skills they need to thrive in the modern world.
             </motion.p>
@@ -131,14 +131,14 @@ export default function AboutSection() {
             {/* Stats Row with Animated Counter */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 pb-6 border-b border-gray-100"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10 pb-8 border-b border-gray-100"
             >
               {stats.map((s, i) => (
-                <div key={s.label} className={i < stats.length - 1 ? 'sm:border-r border-gray-200 pr-2' : ''}>
-                  <div className="text-2xl sm:text-3xl font-semibold text-[#111827] mb-1">
+                <div key={s.label} className={i < stats.length - 1 ? 'sm:border-r border-gray-200 pr-3' : ''}>
+                  <div className="text-3xl sm:text-4xl font-bold text-[#111827] mb-1.5">
                     <Counter value={s.target} suffix={s.suffix} />
                   </div>
-                  <div className="text-xs text-gray-500 font-medium">{s.label}</div>
+                  <div className="text-sm text-gray-500 font-medium">{s.label}</div>
                 </div>
               ))}
             </motion.div>
@@ -146,29 +146,29 @@ export default function AboutSection() {
             {/* CTA + Author Row (Appears sequentially last) */}
             <motion.div
               variants={itemVariants}
-              className="flex items-center gap-6 flex-wrap"
+              className="flex items-center gap-8 flex-wrap"
             >
               <a
                 href="#courses"
-                className="inline-flex items-center gap-4 bg-[#003d2b] hover:bg-[#002b1f] text-white pl-7 pr-2 py-2 rounded-full font-semibold text-sm transition-all shadow-md group"
+                className="inline-flex items-center gap-4 bg-[#003d2b] hover:bg-[#002b1f] text-white pl-8 pr-3 py-3 rounded-full font-semibold text-base sm:text-lg transition-all shadow-lg hover:shadow-xl group"
               >
                 <span className="text-white">Explore More</span>
-                <span className="w-8 h-8 rounded-full bg-[#f3ab27] flex items-center justify-center text-[#003d2b] group-hover:scale-105 transition-transform">
-                  <svg className="w-4 h-4 stroke-current stroke-[3]" fill="none" viewBox="0 0 24 24">
+                <span className="w-10 h-10 rounded-full bg-[#f3ab27] flex items-center justify-center text-[#003d2b] group-hover:scale-105 transition-transform">
+                  <svg className="w-5 h-5 stroke-current stroke-[3]" fill="none" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
                   </svg>
                 </span>
               </a>
 
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
                 <img
                   src={cofounderLogo}
                   alt="Selim Reza Ripon"
-                  className="w-12 h-12 rounded-full object-cover border-2 border-[#003d2b]"
+                  className="w-14 h-14 rounded-full object-cover border-2 border-[#003d2b] shadow-sm"
                 />
                 <div>
-                  <div className="font-bold text-sm text-[#111827]">Selim Reza Ripon</div>
-                  <div className="text-xs text-gray-500 font-medium">Co-Founder</div>
+                  <div className="font-bold text-base sm:text-lg text-[#111827]">Selim Reza Ripon</div>
+                  <div className="text-xs sm:text-sm text-gray-500 font-medium">Co-Founder</div>
                 </div>
               </div>
             </motion.div>
