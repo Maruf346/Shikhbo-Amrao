@@ -29,9 +29,9 @@ function Counter({ value, suffix = '+' }) {
 
 export default function AboutSection() {
   const stats = [
-    { target: 25, suffix: '+', label: 'Year of Experience' },
+    { target: 9, suffix: '+', label: 'Year of Experience' },
     { target: 500, suffix: '+', label: 'Class Completed' },
-    { target: 100, suffix: '+', label: 'Experts Instructors' },
+    { target: 20, suffix: '+', label: 'Experts Instructors' },
   ]
 
   // Parent container stagger animation rules

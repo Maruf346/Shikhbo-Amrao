@@ -12,8 +12,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
       </svg>
     ),
-    title: 'Early Learning',
-    desc: 'At the heart of our online community stands.',
+    title: 'Interactive Learning',
+    desc: 'Engaging live classes with clear explanations and step-by-step guidance.',
   },
   {
     color: '#FEF3E2',
@@ -23,8 +23,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
       </svg>
     ),
-    title: 'Art And Craft',
-    desc: 'At the heart of our online community stands.',
+    title: 'Expert Teachers',
+    desc: 'Caring mentors dedicated to building student confidence and skills.',
   },
   {
     color: '#FDF0E6',
@@ -34,8 +34,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.516 0c.85.493 1.508 1.333 1.508 2.316V18" />
       </svg>
     ),
-    title: 'Brain Train',
-    desc: 'At the heart of our online community stands.',
+    title: 'Smart Practice',
+    desc: 'Structured model tests and regular progress tracking for peace of mind.',
   },
   {
     color: '#E0EFEA',
@@ -45,8 +45,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
       </svg>
     ),
-    title: 'Music Area',
-    desc: 'At the heart of our online community stands.',
+    title: 'Personal Guidance',
+    desc: 'Dedicated doubt-solving sessions so no learner is left behind.',
   },
 ]
 
@@ -67,7 +67,7 @@ function CounterNumber({ target = 92, duration = 2 }) {
     }
   }, [isInView, target, duration])
 
-  return <span ref={nodeRef}>{count}+</span>
+  return <span ref={nodeRef}>{count}%</span>
 }
 
 export default function WhyChooseUsSection() {
@@ -152,13 +152,13 @@ export default function WhyChooseUsSection() {
                 variants={fadeInVariant}
                 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#111827] leading-[1.12] mb-6 tracking-tight"
               >
-                Learning That Aligns With<br className="hidden sm:inline" /> Your Personal Goals.
+                Clear Guidance &<br className="hidden sm:inline" /> Quality Care For Every Learner.
               </motion.h2>
               <motion.p
                 variants={fadeInVariant}
                 className="text-gray-600 text-base sm:text-lg lg:text-xl mb-12 leading-relaxed font-normal"
               >
-                Unlock your full potential with education tailored to your personal aspirations. Learn, grow, and achieve success.
+                We create a supportive learning environment that helps students understand concepts easily and excel with confidence.
               </motion.p>
             </motion.div>
 
@@ -226,10 +226,10 @@ export default function WhyChooseUsSection() {
             {/* Floating Yellow Badge Card with Smooth Number Counter */}
             <div className="absolute bottom-4 right-1 sm:top-1/2 sm:bottom-auto sm:-translate-y-1/2 sm:-right-8 lg:-right-24 bg-[#FFA826] text-black px-6 sm:px-10 py-5 sm:py-7 rounded-2xl shadow-2xl flex items-center gap-4 animate-float-x">
               <span className="font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight">
-                <CounterNumber target={92} duration={2} />
+                <CounterNumber target={96} duration={2} />
               </span>
               <span className="text-sm font-medium leading-snug">
-                Customizable<br />Courses.
+                Student & Guardian<br />Satisfaction Rate.
               </span>
             </div>
 
