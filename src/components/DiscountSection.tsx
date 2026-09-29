@@ -30,10 +30,10 @@ export default function DiscountSection() {
 
   // WhatsApp pre-formatted links
   const studentMessage = encodeURIComponent(
-    'Hello Shikhbo Amrao Team!\n\nI would like to enroll as a Student and know more about your available courses and discounts.'
+    'Hello *Shikhbo Amrao* Team!\n\nI would like to enroll as a Student and know more about your available courses and discounts.'
   )
   const teacherMessage = encodeURIComponent(
-    'Hello Shikhbo Amrao Team!\n\nI am interested in joining Shikhbo Amrao as an Instructor/Teacher. Please guide me on the joining process.'
+    'Hello *Shikhbo Amrao* Team!\n\nI am interested in joining *Shikhbo Amrao* as an Instructor/Teacher. Please guide me on the joining process.'
   )
 
   const studentWhatsappUrl = `https://wa.me/8801707980299?text=${studentMessage}`
