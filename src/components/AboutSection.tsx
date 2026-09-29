@@ -125,7 +125,7 @@ export default function AboutSection() {
               variants={itemVariants}
               className="text-gray-600 text-base sm:text-lg lg:text-xl mb-10 leading-relaxed font-normal"
             >
-              At Amrao Shikhbo, we believe in the power of education to transform lives. Our platform combines expert instructors with innovative methods, empowering students with the knowledge and skills they need to thrive in the modern world.
+              At Shikhbo Amrao, we believe in the power of education to transform lives. Our platform combines expert instructors with innovative methods, empowering students with the knowledge and skills they need to thrive in the modern world.
             </motion.p>
 
             {/* Stats Row with Animated Counter */}

@@ -111,7 +111,7 @@ export default function WhyChooseUsSection() {
   }
 
   return (
-    <section className="py-20 bg-white overflow-hidden" id="why-us">
+    <section className="py-24 sm:py-32 bg-white overflow-hidden" id="why-us">
       {/* Floating Keyframe Animations */}
       <style>{`
         @keyframes floatY {
@@ -130,11 +130,11 @@ export default function WhyChooseUsSection() {
         }
       `}</style>
 
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-4 lg:gap-10 items-center">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
           
           {/* Left Column */}
-          <div className="lg:ml-auto max-w-lg">
+          <div className="lg:ml-auto max-w-xl">
             {/* Header Text Smooth Scroll Entrance */}
             <motion.div
               initial="hidden"
@@ -144,19 +144,19 @@ export default function WhyChooseUsSection() {
             >
               <motion.span
                 variants={fadeInVariant}
-                className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-[#E2EFEB] text-[#2B7A68] mb-4"
+                className="inline-block px-5 py-2 rounded-full text-sm font-semibold bg-[#E2EFEB] text-[#2B7A68] mb-5"
               >
                 Why Choose Us
               </motion.span>
               <motion.h2
                 variants={fadeInVariant}
-                className="text-3xl lg:text-4xl font-semibold text-[#111827] leading-tight mb-4"
+                className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#111827] leading-[1.12] mb-6 tracking-tight"
               >
                 Learning That Aligns With<br className="hidden sm:inline" /> Your Personal Goals.
               </motion.h2>
               <motion.p
                 variants={fadeInVariant}
-                className="text-gray-500 text-sm mb-10 leading-relaxed"
+                className="text-gray-600 text-base sm:text-lg lg:text-xl mb-12 leading-relaxed font-normal"
               >
                 Unlock your full potential with education tailored to your personal aspirations. Learn, grow, and achieve success.
               </motion.p>
@@ -164,7 +164,7 @@ export default function WhyChooseUsSection() {
 
             {/* Features Staggered Grid (Top 2 first, then Bottom 2) */}
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-6"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
@@ -174,17 +174,17 @@ export default function WhyChooseUsSection() {
                 <motion.div
                   key={f.title}
                   variants={featureCardVariant}
-                  className="flex items-start gap-4"
+                  className="flex items-start gap-5"
                 >
                   <div
-                    className="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center"
+                    className="flex-shrink-0 w-20 h-20 rounded-full flex items-center justify-center shadow-sm"
                     style={{ backgroundColor: f.color, color: f.iconColor }}
                   >
-                    {f.icon}
+                    {React.cloneElement(f.icon, { className: 'w-9 h-9' })}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-base text-[#111827] mb-1">{f.title}</h4>
-                    <p className="text-xs text-gray-500 leading-relaxed">{f.desc}</p>
+                    <h4 className="font-bold text-lg sm:text-xl text-[#111827] mb-1.5">{f.title}</h4>
+                    <p className="text-sm text-gray-500 leading-relaxed">{f.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -192,21 +192,21 @@ export default function WhyChooseUsSection() {
           </div>
 
           {/* Right Column: Floating Images & Yellow Card */}
-          <div className="relative flex justify-center lg:justify-end items-center py-10 lg:ml-auto min-h-[390px] sm:min-h-[560px]">
+          <div className="relative flex justify-center lg:justify-end items-center py-10 lg:ml-auto min-h-[440px] sm:min-h-[640px]">
             {/* Background Outer Ring */}
-            <div className="absolute w-[290px] h-[290px] sm:w-[520px] sm:h-[520px] rounded-full bg-[#EAF3F0] -z-10" />
+            <div className="absolute w-[330px] h-[330px] sm:w-[580px] sm:h-[580px] rounded-full bg-[#EAF3F0] -z-10" />
 
             {/* Main Center Circular Image */}
-            <div className="w-[280px] h-[280px] sm:w-[480px] sm:h-[480px] rounded-full overflow-hidden shadow-lg border-8 border-gray-200">
+            <div className="w-[300px] h-[300px] sm:w-[540px] sm:h-[540px] rounded-full overflow-hidden shadow-2xl border-8 sm:border-[12px] border-gray-200">
               <img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=600&fit=crop"
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700&h=700&fit=crop"
                 alt="Student listening with headphones"
                 className="w-full h-full object-cover"
               />
             </div>
 
             {/* Top-Left Floating Circle Image */}
-            <div className="absolute top-4 left-0 sm:top-0 sm:left-2 lg:-left-6 w-24 h-24 sm:w-44 sm:h-44 rounded-full border-4 sm:border-8 border-gray-200 shadow-xl overflow-hidden animate-float-y">
+            <div className="absolute top-2 left-0 sm:top-0 sm:left-0 lg:-left-10 w-28 h-28 sm:w-52 sm:h-52 rounded-full border-4 sm:border-8 border-gray-200 shadow-2xl overflow-hidden animate-float-y">
               <img
                 src="https://images.unsplash.com/photo-1719245307966-1d0b89921af4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Student studying at table"
@@ -215,7 +215,7 @@ export default function WhyChooseUsSection() {
             </div>
 
             {/* Bottom-Left Floating Circle Image */}
-            <div className="absolute bottom-5 left-1 sm:-bottom-4 sm:left-4 lg:-left-4 w-28 h-28 sm:w-48 sm:h-48 rounded-full border-4 sm:border-8 border-gray-200 shadow-xl overflow-hidden animate-float-x">
+            <div className="absolute bottom-4 left-1 sm:-bottom-4 sm:left-2 lg:-left-6 w-32 h-32 sm:w-56 sm:h-56 rounded-full border-4 sm:border-8 border-gray-200 shadow-2xl overflow-hidden animate-float-x">
               <img
                 src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Group studying together"
@@ -224,11 +224,11 @@ export default function WhyChooseUsSection() {
             </div>
 
             {/* Floating Yellow Badge Card with Smooth Number Counter */}
-            <div className="absolute bottom-6 right-1 sm:top-1/2 sm:bottom-auto sm:-translate-y-1/2 sm:-right-12 lg:-right-36 bg-[#FFA826] text-black px-5 sm:px-9 py-4 sm:py-6 rounded-xl shadow-xl flex items-center gap-3 animate-float-x">
-              <span className="font-semibold text-2xl sm:text-3xl lg:text-4xl tracking-tight">
+            <div className="absolute bottom-4 right-1 sm:top-1/2 sm:bottom-auto sm:-translate-y-1/2 sm:-right-8 lg:-right-24 bg-[#FFA826] text-black px-6 sm:px-10 py-5 sm:py-7 rounded-2xl shadow-2xl flex items-center gap-4 animate-float-x">
+              <span className="font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight">
                 <CounterNumber target={92} duration={2} />
               </span>
-              <span className="text-xs font-normal leading-snug">
+              <span className="text-sm font-medium leading-snug">
                 Customizable<br />Courses.
               </span>
             </div>
