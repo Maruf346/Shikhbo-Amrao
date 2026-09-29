@@ -94,10 +94,10 @@ export default function Navbar() {
               </svg>
             </button>
             <a 
-              href="#courses" 
+              href="https://wa.me/+8801707980299" target="_blank" rel="noopener noreferrer"
               className="theme-btn desktop-trial-btn items-center gap-3 pl-6 pr-1.5 py-1.5 rounded-full"
             >
-              Start Free Trial
+              Let's Talk
               <span className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center flex-shrink-0 shadow-sm">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
