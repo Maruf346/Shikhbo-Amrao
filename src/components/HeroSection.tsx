@@ -68,6 +68,7 @@ function CountUp({ target, duration = 2000, suffix = '+' }) {
 export default function HeroSection() {
   return (
     <section
+      id="home"
       className="relative overflow-hidden py-20 sm:py-24 lg:py-32 lg:min-h-[820px] flex items-center"
       style={{
         background: 'radial-gradient(circle at 80% 20%, #e2f4ed 0%, #fdf8f0 50%, #fdf1e4 100%)',

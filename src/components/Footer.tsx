@@ -10,6 +10,22 @@ const socialLinks = [
   { label: 'LinkedIn', url: '#', path: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z' },
 ]
 
+const platformLinks = [
+  { label: 'Learning Levels', href: '#categories' },
+  { label: 'Featured Courses', href: '#courses' },
+  { label: 'Expert Teachers', href: '#teachers' },
+  { label: 'Student Reviews', href: '#testimonials' },
+  { label: 'Quick Query', href: '#newsletter' },
+]
+
+const quickLinks = [
+  { label: 'About Shikhbo Amrao', href: '#about' },
+  { label: 'Why Choose Us', href: '#why-us' },
+  { label: 'Programs', href: '#categories' },
+  { label: 'Latest Articles', href: '#blog' },
+  { label: 'Contact Details', href: '#contact' },
+]
+
 // Motion Variants for Staggered List Entrance (Bottom to Top)
 const listContainerVariants = {
   hidden: { opacity: 0 },
@@ -61,7 +77,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand column */}
           <div>
-            <a href="#" className="flex items-center gap-3 mb-4">
+            <a href="#home" className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center p-1.5 shadow-md flex-shrink-0">
                 <img
                   src={logo}
@@ -113,13 +129,13 @@ export default function Footer() {
               viewport={{ once: true }}
               className="space-y-3"
             >
-              {['Coursera', 'MasterClass', 'Skillshare', 'LinkedIn Learning', 'FutureLearn'].map((item) => (
-                <motion.li key={item} variants={listItemVariants}>
-                  <a href="#" className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2 group">
+              {platformLinks.map((item) => (
+                <motion.li key={item.label} variants={listItemVariants}>
+                  <a href={item.href} className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2 group">
                     <svg className="w-3 h-3 flex-shrink-0 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth={2.5} fill="none" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    {item}
+                    {item.label}
                   </a>
                 </motion.li>
               ))}
@@ -136,13 +152,13 @@ export default function Footer() {
               viewport={{ once: true }}
               className="space-y-3"
             >
-              {['About Shikhbo Amrao', 'Instructors', 'Best Courses', 'Student Reviews', 'FAQs'].map((item) => (
-                <motion.li key={item} variants={listItemVariants}>
-                  <a href="#" className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2 group">
+              {quickLinks.map((item) => (
+                <motion.li key={item.label} variants={listItemVariants}>
+                  <a href={item.href} className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-2 group">
                     <svg className="w-3 h-3 flex-shrink-0 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth={2.5} fill="none" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    {item}
+                    {item.label}
                   </a>
                 </motion.li>
               ))}
@@ -209,8 +225,8 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
           <p className="text-gray-500 text-sm">Copyright © 2026 Shikhbo Amrao. All Rights Reserved.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="#" className="text-gray-500 text-sm hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-500 text-sm hover:text-white transition-colors">Terms of Service</a>
+            <a href="#newsletter" className="text-gray-500 text-sm hover:text-white transition-colors">Send Query</a>
+            <a href="#contact" className="text-gray-500 text-sm hover:text-white transition-colors">Contact Details</a>
           </div>
         </div>
       </div>
