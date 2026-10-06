@@ -250,11 +250,11 @@ export default function Footer() {
                 Dhaka, Bangladesh
               </motion.li>
               <motion.li variants={listItemVariants}>
-                <a href="mailto:info@shikhboamrao.com" className="flex gap-3 text-gray-400 text-sm hover:text-white transition-colors">
+                <a href="mailto:shikhboamrao@gmail.com" className="flex gap-3 text-gray-400 text-sm hover:text-white transition-colors">
                   <svg className="w-4 h-4 mt-0.5 flex-shrink-0 text-green-400" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                   </svg>
-                  info@shikhboamrao.com
+                  shikhboamrao@gmail.com
                 </a>
               </motion.li>
               <motion.li variants={listItemVariants}>
