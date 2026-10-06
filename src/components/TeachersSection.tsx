@@ -10,7 +10,7 @@ const teachers = [
     img: `${import.meta.env.BASE_URL}assets/teacher-1.jpg`,
   },
   {
-    name: 'Ratul Bose',
+    name: 'Selim Reza Ripon',
     role: 'Instructor',
     img: `${import.meta.env.BASE_URL}assets/selim.png`,
   },
