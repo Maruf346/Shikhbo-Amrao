@@ -199,7 +199,7 @@ export default function WhyChooseUsSection() {
             {/* Main Center Circular Image */}
             <div className="w-[300px] h-[300px] sm:w-[540px] sm:h-[540px] rounded-full overflow-hidden shadow-2xl border-8 sm:border-[12px] border-gray-200">
               <img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700&h=700&fit=crop"
+                src={`${import.meta.env.BASE_URL}assets/choose.png`}
                 alt="Student listening with headphones"
                 className="w-full h-full object-cover"
               />

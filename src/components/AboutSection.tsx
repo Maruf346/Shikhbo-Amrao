@@ -71,7 +71,7 @@ export default function AboutSection() {
             {/* Main Large Circular Image */}
             <div className="w-[300px] h-[300px] sm:w-[560px] sm:h-[560px] rounded-full overflow-hidden border-8 sm:border-[12px] border-gray-200 shadow-2xl relative">
               <img
-                src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={`${import.meta.env.BASE_URL}assets/about.png`}
                 alt="Student studying with headphones"
                 className="w-full h-full object-cover"
               />
@@ -80,7 +80,7 @@ export default function AboutSection() {
             {/* Top-Right Small Circular Image (Floating) */}
             <div className="absolute top-0 right-1 sm:right-2 w-28 h-28 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 sm:border-8 border-gray-200 shadow-2xl float-y">
               <img
-                src="https://plus.unsplash.com/premium_photo-1691962725086-d1590e379139?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={`${import.meta.env.BASE_URL}assets/stu.png`}
                 alt="Students collaborating"
                 className="w-full h-full object-cover"
               />
@@ -89,7 +89,7 @@ export default function AboutSection() {
             {/* Bottom-Right Small Circular Image (Floating) */}
             <div className="absolute bottom-2 right-2 sm:bottom-0 sm:right-6 w-36 h-36 sm:w-52 sm:h-52 rounded-full overflow-hidden border-4 sm:border-8 border-gray-200 shadow-2xl float-x">
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=400&fit=crop"
+                src={`${import.meta.env.BASE_URL}assets/about3.png`}
                 alt="Group studying around laptop"
                 className="w-full h-full object-cover"
               />

@@ -178,28 +178,28 @@ export default function HeroSection() {
             <div className="absolute -top-4 left-0 sm:left-2 z-20 bg-white rounded-full shadow-xl px-5 sm:px-7 py-4 sm:py-5 flex items-center gap-4 sm:gap-5 float-x border border-gray-100">
               <div className="pl-1">
                 <div className="font-bold text-xl sm:text-2xl leading-none text-[#f3ab27]">
-                  <CountUp target={5436} duration={2200} />
+                  <CountUp target={500} duration={2200} />
                 </div>
                 <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1">Student</div>
               </div>
               <div className="hidden min-[420px]:flex items-center -space-x-3">
                 <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face"
+                  src="https://images.unsplash.com/photo-1778071087409-ac3b5661dbbf?w=80&h=80&fit=crop&crop=face"
                   alt=""
                   className="w-11 h-11 rounded-full border-2 border-white object-cover"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face"
+                  src="https://images.unsplash.com/photo-1632736849027-25b799ad1527?w=80&h=80&fit=crop&crop=face"
                   alt=""
                   className="w-11 h-11 rounded-full border-2 border-white object-cover"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face"
+                  src="https://images.unsplash.com/photo-1708581905708-79fe4e90c8b3?w=80&h=80&fit=crop&crop=face"
                   alt=""
                   className="w-11 h-11 rounded-full border-2 border-white object-cover"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
+                  src="https://images.unsplash.com/photo-1568573856956-b6807e10886e?w=80&h=80&fit=crop&crop=face"
                   alt=""
                   className="w-11 h-11 rounded-full border-2 border-white object-cover"
                 />
@@ -212,7 +212,7 @@ export default function HeroSection() {
             {/* FLOATING CARD 2: SUCCESS COURSES */}
             <div className="absolute -bottom-2 right-0 sm:right-2 z-20 bg-white rounded-full shadow-xl px-5 sm:px-7 py-3.5 float-y border border-gray-100 text-center">
               <div className="font-bold text-xl sm:text-2xl leading-tight text-[#003d2b]">
-                <CountUp target={450} duration={2000} />
+                <CountUp target={45} duration={2000} />
               </div>
               <div className="text-xs text-gray-500 font-medium whitespace-nowrap mt-0.5">
                 Success Courses
@@ -224,10 +224,10 @@ export default function HeroSection() {
               {/* Left Arch Image */}
               <div className="relative flex-shrink-0">
                 <div className="absolute inset-0 -translate-x-4 translate-y-3 rounded-t-full rounded-b-full border-2 border-[#003d2b] pointer-events-none z-0" />
-                <div className="relative z-10 w-[42vw] max-w-48 sm:w-56 lg:w-64 h-[68vw] max-h-76 sm:h-96 lg:h-[430px] rounded-t-full rounded-b-full overflow-hidden bg-[#f2a123] shadow-lg">
+                <div className="relative z-10 w-[42vw] max-w-58 sm:w-56 lg:w-64 h-[68vw] max-h-96 sm:h-96 lg:h-[430px] rounded-t-full rounded-b-full overflow-hidden bg-[#f2a123] shadow-lg">
                   <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=80"
-                    alt="Student with glasses"
+                    src={`${import.meta.env.BASE_URL}assets/hero.avif`}
+                    alt="Classroom"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -236,10 +236,10 @@ export default function HeroSection() {
               {/* Right Arch Image */}
               <div className="relative flex-shrink-0">
                 <div className="absolute inset-0 -translate-x-4 translate-y-3 rounded-t-full rounded-b-full border-2 border-[#003d2b] pointer-events-none z-0" />
-                <div className="relative z-10 w-[48vw] max-w-56 sm:w-72 lg:w-80 h-[78vw] max-h-96 sm:h-[460px] lg:h-[520px] rounded-t-full rounded-b-full overflow-hidden bg-[#48c5cd] shadow-lg">
+                <div className="relative z-10 w-[48vw] max-w-86 sm:w-82 lg:w-80 h-[88vw] max-h-128 sm:h-[460px] lg:h-[520px] rounded-t-full rounded-b-full overflow-hidden bg-[#48c5cd] shadow-lg">
                   <img
-                    src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=600&auto=format&fit=crop&q=80"
-                    alt="Student with headphones"
+                    src={`${import.meta.env.BASE_URL}assets/hero2.png`}
+                    alt="Student with glasses"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
