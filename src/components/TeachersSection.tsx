@@ -6,23 +6,23 @@ import { motion } from 'framer-motion'
 const teachers = [
   {
     name: 'Sanjeeda Yesmin',
-    role: 'Instructors',
-    img: 'https://images.unsplash.com/photo-1659355893735-ab18e2e73ba8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    role: 'Instructor',
+    img: `${import.meta.env.BASE_URL}assets/teacher-1.jpg`,
   },
   {
     name: 'Ratul Bose',
-    role: 'Instructors',
-    img: 'https://images.unsplash.com/photo-1659355894117-0ae6f8f28d0b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    role: 'Instructor',
+    img: `${import.meta.env.BASE_URL}assets/selim.png`,
   },
   {
-    name: 'Marvin McKinney',
-    role: 'Instructors',
-    img: 'https://images.unsplash.com/photo-1659353218696-e97aeebe561d?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Maruf Hossain',
+    role: 'Instructor',
+    img: `${import.meta.env.BASE_URL}assets/Maruf.jpg`,
   },
   {
-    name: 'Courtney Henry',
-    role: 'Instructors',
-    img: 'https://images.unsplash.com/photo-1758600587781-e98ef705ab0e?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Otrina Nusaiba Orthi',
+    role: 'Instructor',
+    img: `${import.meta.env.BASE_URL}assets/tanvi.jpg`,
   },
 ] 
 
