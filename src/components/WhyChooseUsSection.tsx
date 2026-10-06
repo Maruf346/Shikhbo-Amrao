@@ -199,7 +199,7 @@ export default function WhyChooseUsSection() {
             {/* Main Center Circular Image */}
             <div className="w-[300px] h-[300px] sm:w-[540px] sm:h-[540px] rounded-full overflow-hidden shadow-2xl border-8 sm:border-[12px] border-gray-200">
               <img
-                src={`${import.meta.env.BASE_URL}assets/choose.png`}
+                src={`${import.meta.env.BASE_URL}assets/campus.png`}
                 alt="Student listening with headphones"
                 className="w-full h-full object-cover"
               />
@@ -217,7 +217,7 @@ export default function WhyChooseUsSection() {
             {/* Bottom-Left Floating Circle Image */}
             <div className="absolute bottom-4 left-1 sm:-bottom-4 sm:left-2 lg:-left-6 w-32 h-32 sm:w-56 sm:h-56 rounded-full border-4 sm:border-8 border-gray-200 shadow-2xl overflow-hidden animate-float-x">
               <img
-                src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={`${import.meta.env.BASE_URL}assets/why.jpg`}
                 alt="Group studying together"
                 className="w-full h-full object-cover"
               />
@@ -225,7 +225,7 @@ export default function WhyChooseUsSection() {
 
             {/* Floating Yellow Badge Card with Smooth Number Counter */}
             <div className="absolute bottom-4 right-1 sm:top-1/2 sm:bottom-auto sm:-translate-y-1/2 sm:-right-8 lg:-right-24 bg-[#FFA826] text-black px-6 sm:px-10 py-5 sm:py-7 rounded-2xl shadow-2xl flex items-center gap-4 animate-float-x">
-              <span className="font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight">
+              <span className="font-bold text-1xl sm:text-2xl lg:text-3xl tracking-tight">
                 <CounterNumber target={96} duration={2} />
               </span>
               <span className="text-sm font-medium leading-snug">
