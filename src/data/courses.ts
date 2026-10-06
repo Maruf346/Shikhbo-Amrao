@@ -50,7 +50,7 @@ export const courses: Course[] = [
     students: 2,
     instructorImg: 'https://images.unsplash.com/photo-1590650213165-c1fef80648c4?w=48&h=48&fit=crop&crop=face',
     instructor: 'Jane Cooper',
-    price: '$89.00',
+    price: '৳4,500',
   },
   {
     id: 4,
@@ -63,7 +63,7 @@ export const courses: Course[] = [
     students: 6,
     instructorImg: 'https://images.unsplash.com/photo-1664382953518-4a664ab8a8c9?w=48&h=48&fit=crop&crop=face',
     instructor: 'Jane Cooper',
-    price: '$99.00',
+    price: '৳5,500',
   },
   {
     id: 5,
@@ -76,7 +76,7 @@ export const courses: Course[] = [
     students: 6,
     instructorImg: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=48&h=48&fit=crop&crop=face',
     instructor: 'Jane Cooper',
-    price: '$110.00',
+    price: '৳6,500',
   },
   {
     id: 6,
@@ -89,6 +89,6 @@ export const courses: Course[] = [
     students: 7,
     instructorImg: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=48&h=48&fit=crop&crop=face',
     instructor: 'Jane Cooper',
-    price: '$60.00',
+    price: '৳3,500',
   },
 ]

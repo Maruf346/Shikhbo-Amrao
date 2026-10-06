@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useSectionNavigation } from '../navigation'
 
 const categories = [
   {
@@ -57,6 +58,7 @@ export default function TopCategorySection() {
   const [current, setCurrent] = useState(0)
   const [visible, setVisible] = useState(4)
   const [isPaused, setIsPaused] = useState(false)
+  const { navigateToSection } = useSectionNavigation()
 
   useEffect(() => {
     const handleResize = () => {
@@ -148,8 +150,9 @@ export default function TopCategorySection() {
                   <h3 className="text-white font-bold text-xl mb-2">{cat.title}</h3>
                   <p className="text-white/70 text-sm mb-4 leading-relaxed">{cat.desc}</p>
                 </div>
-                <a
-                  href="#courses"
+                <button
+                  type="button"
+                  onClick={() => navigateToSection('courses')}
                   className="inline-flex items-center justify-between text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-full transition-all w-full mt-2"
                   style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: '#fff' }}
                   onMouseEnter={(e) => {
@@ -163,7 +166,7 @@ export default function TopCategorySection() {
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
                   </svg>
-                </a>
+                </button>
               </div>
             ))}
           </div>

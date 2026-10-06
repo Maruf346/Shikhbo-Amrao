@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useSectionNavigation } from '../navigation'
 
 const posts = [
   {
@@ -45,6 +46,7 @@ export default function BlogSection() {
   const [current, setCurrent] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const [isResetting, setIsResetting] = useState(false)
+  const { navigateToSection } = useSectionNavigation()
 
   // Duplicated post array to enable seamless infinite slide animation
   const extendedPosts = [...posts, ...posts]
@@ -236,8 +238,9 @@ export default function BlogSection() {
 
                     {/* Styled Pill Button */}
                     <div>
-                      <a
-                        href="#"
+                      <button
+                        type="button"
+                        onClick={() => navigateToSection('newsletter')}
                         className="inline-flex items-center gap-3 pl-5 pr-1.5 py-1.5 rounded-full bg-[#014738] text-white font-semibold text-sm hover:bg-[#023525] transition-colors group"
                       >
                         <span className="text-white">View Details</span>
@@ -251,7 +254,7 @@ export default function BlogSection() {
                             />
                           </svg>
                         </span>
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>

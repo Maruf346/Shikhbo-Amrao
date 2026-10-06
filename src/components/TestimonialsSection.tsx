@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useSectionNavigation } from '../navigation'
 
 const testimonials = [
   {
@@ -34,6 +35,7 @@ export default function TestimonialsSection() {
   const [current, setCurrent] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const [visibleCount, setVisibleCount] = useState(1)
+  const { navigateToSection } = useSectionNavigation()
 
   const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length)
   const next = () => setCurrent((c) => (c + 1) % testimonials.length)
@@ -129,12 +131,16 @@ export default function TestimonialsSection() {
                 <div className="text-xs text-gray-500">Google Reviews</div>
               </div>
             </div>
-            <a href="#" className="theme-btn justify-center w-full sm:w-auto">
+            <button
+              type="button"
+              onClick={() => navigateToSection('testimonials')}
+              className="theme-btn justify-center w-full sm:w-auto"
+            >
               All Testimonials
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
               </svg>
-            </a>
+            </button>
           </motion.div>
         </motion.div>
 

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useInView, animate } from 'framer-motion'
+import { useSectionNavigation } from '../navigation'
 const cofounderLogo = `${import.meta.env.BASE_URL}assets/selim.png`
 
 // Count-up Component for Stats
@@ -28,6 +29,7 @@ function Counter({ value, suffix = '+' }) {
 }
 
 export default function AboutSection() {
+  const { navigateToSection } = useSectionNavigation()
   const stats = [
     { target: 9, suffix: '+', label: 'Year of Experience' },
     { target: 500, suffix: '+', label: 'Class Completed' },
@@ -148,8 +150,9 @@ export default function AboutSection() {
               variants={itemVariants}
               className="flex items-center gap-8 flex-wrap"
             >
-              <a
-                href="#courses"
+              <button
+                type="button"
+                onClick={() => navigateToSection('courses')}
                 className="inline-flex items-center gap-4 bg-[#003d2b] hover:bg-[#002b1f] text-white pl-8 pr-3 py-3 rounded-full font-semibold text-base sm:text-lg transition-all shadow-lg hover:shadow-xl group"
               >
                 <span className="text-white">Explore More</span>
@@ -158,7 +161,7 @@ export default function AboutSection() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
                   </svg>
                 </span>
-              </a>
+              </button>
 
               <div className="flex items-center gap-4">
                 <img

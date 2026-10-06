@@ -1,60 +1,82 @@
 import { useState } from 'react'
+import { useSectionNavigation } from '../navigation'
+import type { SectionId } from '../navigation'
 
 const logo = `${import.meta.env.BASE_URL}assets/logo.png`
 
-const navItems = [
+type NavItem = {
+  label: string
+  sectionId: SectionId
+  dropdown?: {
+    label: string
+    sectionId: SectionId
+  }[]
+}
+
+const navItems: NavItem[] = [
   {
     label: 'Home',
-    href: '#home',
+    sectionId: 'home',
     dropdown: [
-      { label: 'Home Overview', href: '#home' },
-      { label: 'About Platform', href: '#about' },
-      { label: 'Quick Query', href: '#newsletter' },
+      { label: 'Home Overview', sectionId: 'home' },
+      { label: 'About Platform', sectionId: 'about' },
+      { label: 'Quick Query', sectionId: 'newsletter' },
     ],
   },
   {
     label: 'Programs',
-    href: '#categories',
+    sectionId: 'categories',
     dropdown: [
-      { label: 'Learning Levels', href: '#categories' },
-      { label: 'Featured Courses', href: '#courses' },
-      { label: 'Why Choose Us', href: '#why-us' },
-      { label: 'Student Reviews', href: '#testimonials' },
+      { label: 'Learning Levels', sectionId: 'categories' },
+      { label: 'Featured Courses', sectionId: 'courses' },
+      { label: 'Why Choose Us', sectionId: 'why-us' },
+      { label: 'Student Reviews', sectionId: 'testimonials' },
     ],
   },
   {
     label: 'Courses',
-    href: '#courses',
+    sectionId: 'courses',
     dropdown: [
-      { label: 'All Courses', href: '#courses' },
-      { label: 'School & College', href: '#categories' },
-      { label: 'ICT & Coding', href: '#categories' },
-      { label: 'Meet Teachers', href: '#teachers' },
+      { label: 'All Courses', sectionId: 'courses' },
+      { label: 'School & College', sectionId: 'categories' },
+      { label: 'ICT & Coding', sectionId: 'categories' },
+      { label: 'Meet Teachers', sectionId: 'teachers' },
     ],
   },
   {
     label: 'Blog',
-    href: '#blog',
+    sectionId: 'blog',
     dropdown: [
-      { label: 'Latest Articles', href: '#blog' },
-      { label: 'Student Stories', href: '#testimonials' },
-      { label: 'Ask a Question', href: '#newsletter' },
+      { label: 'Latest Articles', sectionId: 'blog' },
+      { label: 'Student Stories', sectionId: 'testimonials' },
+      { label: 'Ask a Question', sectionId: 'newsletter' },
     ],
   },
-  { label: 'Contact Us', href: '#newsletter' },
+  { label: 'Contact Us', sectionId: 'newsletter' },
 ]
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [searchOpen, setSearchOpen] = useState(false)
+  const { activeSection, navigateToSection } = useSectionNavigation()
+
+  const handleNavigate = (sectionId: SectionId) => {
+    navigateToSection(sectionId)
+    setMobileOpen(false)
+    setOpenDropdown(null)
+  }
 
   return (
     <>
       <header className="sticky top-0 z-50 bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-3 h-16 sm:h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2 min-w-0 flex-shrink-0">
+          <button
+            type="button"
+            onClick={() => handleNavigate('home')}
+            className="flex items-center gap-2 min-w-0 flex-shrink-0 cursor-pointer"
+          >
             <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center overflow-hidden flex-shrink-0" style={{ backgroundColor: 'var(--primary)' }}>
               {logo ? (
                 <img src={logo} alt="Shikhbo Amrao Logo" className="w-full h-full object-cover" />
@@ -63,15 +85,18 @@ export default function Navbar() {
             <span className="font-bold text-lg sm:text-xl leading-tight truncate" style={{ color: 'var(--primary)' }}>
               Shikhbo <span className="text-gray-800">Amrao</span>
             </span>
-          </a>
+          </button>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <div key={item.label} className="relative group">
-                <a
-                  href={item.href}
-                  className="flex items-center gap-1 px-4 py-2 text-[15px] font-500 text-gray-700 hover:text-[var(--primary)] transition-colors font-medium rounded-md"
+                <button
+                  type="button"
+                  onClick={() => handleNavigate(item.sectionId)}
+                  className={`flex items-center gap-1 px-4 py-2 text-[15px] font-500 transition-colors font-medium rounded-md cursor-pointer ${
+                    activeSection === item.sectionId ? 'text-[var(--primary)]' : 'text-gray-700 hover:text-[var(--primary)]'
+                  }`}
                   onMouseEnter={() => item.dropdown && setOpenDropdown(item.label)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
@@ -81,7 +106,7 @@ export default function Navbar() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                     </svg>
                   )}
-                </a>
+                </button>
                 {item.dropdown && (
                   <div
                     className="absolute top-full left-0 bg-white shadow-xl rounded-xl border border-gray-100 py-2 min-w-[180px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0 z-50"
@@ -89,10 +114,14 @@ export default function Navbar() {
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
                     {item.dropdown.map((sub) => (
-                      <a key={sub.label} href={sub.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:text-[var(--primary)] hover:bg-gray-50 transition-colors">
+                      <button
+                        key={sub.label}
+                        type="button"
+                        onClick={() => handleNavigate(sub.sectionId)}
+                        className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:text-[var(--primary)] hover:bg-gray-50 transition-colors cursor-pointer"
+                      >
                         {sub.label}
-                      </a>
+                      </button>
                     ))}
                   </div>
                 )}
@@ -166,36 +195,40 @@ export default function Navbar() {
                     </svg>
                   </button>
                 ) : (
-                  <a
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-2 text-gray-700 font-medium text-sm"
+                  <button
+                    type="button"
+                    onClick={() => handleNavigate(item.sectionId)}
+                    className="block w-full text-left py-2 text-gray-700 font-medium text-sm"
                   >
                     {item.label}
-                  </a>
+                  </button>
                 )}
                 {item.dropdown && openDropdown === item.label && (
                   <div className="ml-4 space-y-1 pb-2">
                     {item.dropdown.map((sub) => (
-                      <a
+                      <button
                         key={sub.label}
-                        href={sub.href}
-                        onClick={() => setMobileOpen(false)}
-                        className="block py-1.5 text-sm text-gray-600 hover:text-[var(--primary)]"
+                        type="button"
+                        onClick={() => handleNavigate(sub.sectionId)}
+                        className="block w-full text-left py-1.5 text-sm text-gray-600 hover:text-[var(--primary)]"
                       >
                         {sub.label}
-                      </a>
+                      </button>
                     ))}
                   </div>
                 )}
               </div>
             ))}
-            <a href="#newsletter" onClick={() => setMobileOpen(false)} className="theme-btn w-full justify-center mt-3">
+            <button
+              type="button"
+              onClick={() => handleNavigate('newsletter')}
+              className="theme-btn w-full justify-center mt-3"
+            >
               Send Query
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
               </svg>
-            </a>
+            </button>
           </div>
         )}
       </header>

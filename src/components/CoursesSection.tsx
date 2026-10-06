@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useSectionNavigation } from '../navigation'
 import { courses } from '../data/courses'
 
 const tabs = [
@@ -107,6 +108,8 @@ export default function CoursesSection() {
 }
 
 function CourseCard({ course }: { course: (typeof courses)[0] }) {
+  const { navigateToSection } = useSectionNavigation()
+
   return (
     <div className="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-[#F0F4F5] border border-gray-200/60 flex flex-col h-full hover:-translate-y-1">
       {/* Image */}
@@ -172,13 +175,14 @@ function CourseCard({ course }: { course: (typeof courses)[0] }) {
           </span>
         </div>
 
-        <a
-          href="#"
+        <button
+          type="button"
+          onClick={() => navigateToSection('newsletter')}
           className="theme-btn justify-center text-sm py-2.5"
           style={{ display: 'flex' }}
         >
           Enroll Now
-        </a>
+        </button>
       </div>
     </div>
   )
