@@ -8,25 +8,25 @@ const testimonials = [
     quote: '"Shikhbo Amrao made ICT and Science concepts so clear for my HSC preparation. The instructors explain every topic step-by-step!"',
     name: 'Arafat Rahman',
     role: 'HSC Candidate (Science)',
-    img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&h=120&fit=crop&crop=face',
+    img: 'https://images.unsplash.com/photo-1545123892-371649521e2a?w=120&h=120&fit=crop&crop=face',
   },
   {
     quote: '"As a guardian, I am very satisfied with their progress tracking and structured guidance. My daughter has built genuine interest in learning."',
     name: 'Nusrat Jahan',
     role: 'Guardian of Class 8 Student',
-    img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop&crop=face',
+    img: 'https://images.unsplash.com/flagged/photo-1553489470-ad2885ef5fc7?w=120&h=120&fit=crop&crop=face',
   },
   {
     quote: '"The CSE programming & web development lessons are practical and easy to follow. Perfect platform for acquiring real skills early on."',
     name: 'Tanvir Hossain',
     role: 'CSE Undergraduate Student',
-    img: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120&h=120&fit=crop&crop=face',
+    img: 'https://images.unsplash.com/photo-1566482385965-a65e38b67395?w=120&h=120&fit=crop&crop=face',
   },
   {
     quote: '"Their live doubt-solving sessions helped me clear all my difficult topics before board exams. Highly recommended for every student!"',
     name: 'Farhana Yeasmin',
     role: 'SSC Examinee',
-    img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&h=120&fit=crop&crop=face',
+    img: 'https://images.unsplash.com/photo-1700680056842-20d9acc36e91?w=120&h=120&fit=crop&crop=face',
   },
 ]
 

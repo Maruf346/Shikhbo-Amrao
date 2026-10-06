@@ -111,7 +111,7 @@ export default function NewsletterSection() {
           >
             <motion.div {...floatAnimFast} className="w-full h-full relative">
               <img
-                src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=300&auto=format&fit=crop&q=80"
+                src="https://images.unsplash.com/photo-1545123892-371649521e2a?w=300&auto=format&fit=crop&q=80"
                 alt="Student Boy"
                 className="w-full h-full object-cover rounded-full shadow-xl border-4 border-white/30"
               />
@@ -128,7 +128,7 @@ export default function NewsletterSection() {
           >
             <motion.div {...floatAnimSlow} className="w-full h-full relative">
               <img
-                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&auto=format&fit=crop&q=80"
+                src="https://images.unsplash.com/photo-1700680056842-20d9acc36e91?w=300&auto=format&fit=crop&q=80"
                 alt="Student Girl"
                 className="w-full h-full object-cover rounded-full shadow-xl border-4 border-white/30"
               />
@@ -177,7 +177,7 @@ export default function NewsletterSection() {
 
             {/* Subtitle */}
             <motion.p variants={fadeInUp} className="text-white/80 text-sm sm:text-base mb-8 max-w-lg mx-auto">
-              Send your questions directly to our team on WhatsApp.
+              Send your admission questions directly to our team on WhatsApp.
             </motion.p>
 
             {/* Animated Form / Search Box */}
@@ -203,7 +203,7 @@ export default function NewsletterSection() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Send your query here..."
+                placeholder="Send your admission query here..."
                 required
                 className="w-full flex-1 px-4 py-3 sm:py-2 text-sm text-gray-800 placeholder-gray-400 bg-transparent rounded-full focus:outline-none"
               />
@@ -213,7 +213,7 @@ export default function NewsletterSection() {
                 type="submit"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-3 pl-6 pr-2 py-2 rounded-full bg-[#014738] text-white font-semibold text-sm hover:bg-[#023525] transition-colors group shrink-0"
               >
-                <span>{submitted ? 'Opening WhatsApp...' : 'Send Query'}</span>
+                <span>{submitted ? 'Opening WhatsApp...' : 'Send'}</span>
                 <span className="w-8 h-8 rounded-full bg-[#f3a833] text-black flex items-center justify-center transition-transform group-hover:rotate-45">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
