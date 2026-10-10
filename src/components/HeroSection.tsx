@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useSectionNavigation } from '../navigation'
+import { batchCount } from '../data/batches'
 
 const airb = `${import.meta.env.BASE_URL}assets/airb.png`
 
@@ -213,13 +214,13 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* FLOATING CARD 2: SUCCESS COURSES */}
+            {/* FLOATING CARD 2: AVAILABLE BATCHES */}
             <div className="absolute -bottom-2 right-0 sm:right-2 z-20 bg-white rounded-full shadow-xl px-5 sm:px-7 py-3.5 float-y border border-gray-100 text-center">
               <div className="font-bold text-xl sm:text-2xl leading-tight text-[#003d2b]">
-                <CountUp target={45} duration={2000} />
+                <CountUp target={batchCount} duration={2000} suffix="+" />
               </div>
               <div className="text-xs text-gray-500 font-medium whitespace-nowrap mt-0.5">
-                Success Courses
+                Batches
               </div>
             </div>
 

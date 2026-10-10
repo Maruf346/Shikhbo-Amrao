@@ -14,7 +14,7 @@ const socialLinks = [
 
 const platformLinks = [
   { label: 'Learning Levels', sectionId: 'categories' },
-  { label: 'Featured Courses', sectionId: 'courses' },
+  { label: 'Batch List', sectionId: 'courses' },
   { label: 'Expert Teachers', sectionId: 'teachers' },
   { label: 'Student Reviews', sectionId: 'testimonials' },
   { label: 'Quick Query', sectionId: 'newsletter' },

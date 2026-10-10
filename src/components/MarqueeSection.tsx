@@ -3,14 +3,14 @@ const cap = `${import.meta.env.BASE_URL}assets/cap.png`
 const items = [
   'Education & University',
   'Online Education',
-  '230+ Quality Courses',
+  'Flexible Class Batches',
   'Experience Instructors',
   'Kindergarten Study',
   '25% Coupon Bonus',
   '25% Extra Coupon Bonus',
   'Education & University',
   'Online Education',
-  '230+ Quality Courses',
+  'Flexible Class Batches',
   'Experience Instructors',
   'Kindergarten Study',
   '25% Coupon Bonus',
@@ -29,7 +29,7 @@ export default function MarqueeSection() {
             <img
               src={cap}
               alt="Cap Icon"
-              className="w-5 h-5 object-contain flex-shrink-0"
+              className="w-5 h-5 object-contain shrink-0"
             />
             <span>{item}</span>
           </div>

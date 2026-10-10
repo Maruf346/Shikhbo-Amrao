@@ -28,16 +28,16 @@ const navItems: NavItem[] = [
     sectionId: 'categories',
     dropdown: [
       { label: 'Learning Levels', sectionId: 'categories' },
-      { label: 'Featured Courses', sectionId: 'courses' },
+      { label: 'Batch List', sectionId: 'courses' },
       { label: 'Why Choose Us', sectionId: 'why-us' },
       { label: 'Student Reviews', sectionId: 'testimonials' },
     ],
   },
   {
-    label: 'Courses',
+    label: 'Batches',
     sectionId: 'courses',
     dropdown: [
-      { label: 'All Courses', sectionId: 'courses' },
+      { label: 'All Batches', sectionId: 'courses' },
       { label: 'School & College', sectionId: 'categories' },
       { label: 'ICT & Coding', sectionId: 'categories' },
       { label: 'Meet Teachers', sectionId: 'teachers' },

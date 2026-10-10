@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import HeroSection from '../components/HeroSection'
 import AboutSection from '../components/AboutSection'
 import TopCategorySection from '../components/TopCategorySection'
-import CoursesSection from '../components/CoursesSection'
+import BatchesSection from '../components/BatchesSection'
 import DiscountSection from '../components/DiscountSection'
 import WhyChooseUsSection from '../components/WhyChooseUsSection'
 import TeachersSection from '../components/TeachersSection'
@@ -22,7 +22,7 @@ export default function HomePage() {
         <HeroSection />
         <AboutSection />
         <TopCategorySection />
-        <CoursesSection />
+        <BatchesSection />
         <DiscountSection />
         <WhyChooseUsSection />
         <TeachersSection />
