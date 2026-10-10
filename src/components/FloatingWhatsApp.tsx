@@ -113,7 +113,7 @@ export default function FloatingWhatsApp() {
                 <textarea
                   id="whatsapp-message"
                   ref={messageInputRef}
-                  rows={2}
+                  rows={1}
                   maxLength={2000}
                   value={message}
                   onChange={(event) => setMessage(event.target.value)}

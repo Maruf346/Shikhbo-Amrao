@@ -1,9 +1,25 @@
 {
-  "title": "Shikhbo Amrao | Best Coaching Center in Bangladesh",
-  "description": "Join Shikhbo Amrao, the leading coaching center in Bangladesh. We offer premium educational services, academic tutoring, and university admission preparation to help students achieve their dreams.",
+  "title": "Shikhbo Amrao | School & HSC Coaching in Dhaka",
+  "description": "Join Shikhbo Amrao for school and HSC subject batches, expert instruction, and guided learning in Mirpur-1, Dhaka. Contact us to ask about enrollment.",
+  "siteUrl": "https://shikhboamrao.qoderlabs.com",
   "language": "en",
   "robots": {
     "index": true
+  },
+  "openGraph": {
+    "image": "/assets/hero.avif"
+  },
+  "organization": {
+    "name": "Shikhbo Amrao",
+    "telephone": "+8801707980299",
+    "email": "shikhboamrao@gmail.com",
+    "addressLocality": "Mirpur-1",
+    "addressRegion": "Dhaka",
+    "addressCountry": "BD",
+    "sameAs": [
+      "https://www.facebook.com/ShikhboAmrao/",
+      "https://www.youtube.com/@ShikhboAmrao"
+    ]
   },
   "accessibility": {
     "addBypassLinks": false,
