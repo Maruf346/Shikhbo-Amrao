@@ -1,68 +1,140 @@
-'use client'
+"use client"
 
-import React, { useState, useEffect, useRef } from 'react'
-import { motion, useInView, animate } from 'framer-motion'
+// Animated Counter Sub-Component
+
+// Stagger animation variants for Left Header Elements
+
+// Stagger animation variants for Feature Cards (Top 2 then Bottom 2)
+// Items 0 & 1 animate first, then items 2 & 3
+/* Floating Keyframe Animations */ /* Left Column */ /* Header Text Smooth Scroll Entrance */ /* Features Staggered Grid (Top 2 first, then Bottom 2) */ /* Right Column: Floating Images & Yellow Card */ /* Background Outer Ring */ /* Main Center Circular Image */ /* Top-Left Floating Circle Image */ /* Bottom-Left Floating Circle Image */ /* Floating Yellow Badge Card with Smooth Number Counter */
+
+import React, { useState, useEffect, useRef } from "react"
+
+import { motion, useInView, animate } from "framer-motion"
 
 const features = [
   {
-    color: '#E0EFEA',
-    iconColor: '#2B7A68',
+    color: "#E0EFEA",
+
+    iconColor: "#2B7A68",
+
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+      <svg
+        className="w-7 h-7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.8}
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+        />
       </svg>
     ),
-    title: 'Interactive Learning',
-    desc: 'Engaging live classes with clear explanations and step-by-step guidance.',
+
+    title: "Interactive Learning",
+
+    desc: "Engaging live classes with clear explanations and step-by-step guidance.",
   },
+
   {
-    color: '#FEF3E2',
-    iconColor: '#E08B2D',
+    color: "#FEF3E2",
+
+    iconColor: "#E08B2D",
+
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+      <svg
+        className="w-7 h-7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.8}
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"
+        />
       </svg>
     ),
-    title: 'Expert Teachers',
-    desc: 'Caring mentors dedicated to building student confidence and skills.',
+
+    title: "Expert Teachers",
+
+    desc: "Caring mentors dedicated to building student confidence and skills.",
   },
+
   {
-    color: '#FDF0E6',
-    iconColor: '#DF8344',
+    color: "#FDF0E6",
+
+    iconColor: "#DF8344",
+
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.516 0c.85.493 1.508 1.333 1.508 2.316V18" />
+      <svg
+        className="w-7 h-7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.8}
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.516 0c.85.493 1.508 1.333 1.508 2.316V18"
+        />
       </svg>
     ),
-    title: 'Smart Practice',
-    desc: 'Structured model tests and regular progress tracking for peace of mind.',
+
+    title: "Smart Practice",
+
+    desc: "Structured model tests and regular progress tracking for peace of mind.",
   },
+
   {
-    color: '#E0EFEA',
-    iconColor: '#2B7A68',
+    color: "#E0EFEA",
+
+    iconColor: "#2B7A68",
+
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
+      <svg
+        className="w-7 h-7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.8}
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z"
+        />
       </svg>
     ),
-    title: 'Personal Guidance',
-    desc: 'Dedicated doubt-solving sessions so no learner is left behind.',
+
+    title: "Personal Guidance",
+
+    desc: "Dedicated doubt-solving sessions so no learner is left behind.",
   },
 ]
 
-// Animated Counter Sub-Component
 function CounterNumber({ target = 92, duration = 2 }) {
   const [count, setCount] = useState(0)
+
   const nodeRef = useRef(null)
-  const isInView = useInView(nodeRef, { once: true, margin: '-50px' })
+
+  const isInView = useInView(nodeRef, { once: true, margin: "-50px" })
 
   useEffect(() => {
     if (isInView) {
       const controls = animate(0, target, {
         duration,
-        ease: 'easeOut',
+
+        ease: "easeOut",
+
         onUpdate: (value) => setCount(Math.floor(value)),
       })
+
       return () => controls.stop()
     }
   }, [isInView, target, duration])
@@ -71,9 +143,9 @@ function CounterNumber({ target = 92, duration = 2 }) {
 }
 
 export default function WhyChooseUsSection() {
-  // Stagger animation variants for Left Header Elements
   const headerContainerVariants = {
     hidden: {},
+
     visible: {
       transition: {
         staggerChildren: 0.15,
@@ -83,36 +155,43 @@ export default function WhyChooseUsSection() {
 
   const fadeInVariant = {
     hidden: { opacity: 0, y: 20 },
+
     visible: {
       opacity: 1,
+
       y: 0,
-      transition: { duration: 0.5, ease: 'easeOut' },
+
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   }
 
-  // Stagger animation variants for Feature Cards (Top 2 then Bottom 2)
   const featureGridVariants = {
     hidden: {},
+
     visible: {
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2, // Items 0 & 1 animate first, then items 2 & 3
+
+        staggerChildren: 0.2,
       },
     },
   }
 
   const featureCardVariant = {
     hidden: { opacity: 0, y: 25 },
+
     visible: {
       opacity: 1,
+
       y: 0,
-      transition: { duration: 0.5, ease: 'easeOut' },
+
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   }
 
   return (
     <section className="py-24 sm:py-32 bg-white overflow-hidden" id="why-us">
-      {/* Floating Keyframe Animations */}
+      {}
       <style>{`
         @keyframes floatY {
           0%, 100% { transform: translateY(-10px); }
@@ -132,10 +211,9 @@ export default function WhyChooseUsSection() {
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
-          
-          {/* Left Column */}
+          {}
           <div className="lg:ml-auto max-w-xl">
-            {/* Header Text Smooth Scroll Entrance */}
+            {}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -152,17 +230,19 @@ export default function WhyChooseUsSection() {
                 variants={fadeInVariant}
                 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#111827] leading-[1.12] mb-6 tracking-tight"
               >
-                Clear Guidance &<br className="hidden sm:inline" /> Quality Care For Every Learner.
+                Clear Guidance &<br className="hidden sm:inline" /> Quality Care
+                For Every Learner.
               </motion.h2>
               <motion.p
                 variants={fadeInVariant}
                 className="text-gray-600 text-base sm:text-lg lg:text-xl mb-12 leading-relaxed font-normal"
               >
-                We create a supportive learning environment that helps students understand concepts easily and excel with confidence.
+                We create a supportive learning environment that helps students
+                understand concepts easily and excel with confidence.
               </motion.p>
             </motion.div>
 
-            {/* Features Staggered Grid (Top 2 first, then Bottom 2) */}
+            {}
             <motion.div
               className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8"
               initial="hidden"
@@ -180,23 +260,27 @@ export default function WhyChooseUsSection() {
                     className="flex-shrink-0 w-20 h-20 rounded-full flex items-center justify-center shadow-sm"
                     style={{ backgroundColor: f.color, color: f.iconColor }}
                   >
-                    {React.cloneElement(f.icon, { className: 'w-9 h-9' })}
+                    {React.cloneElement(f.icon, { className: "w-9 h-9" })}
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg sm:text-xl text-[#111827] mb-1.5">{f.title}</h4>
-                    <p className="text-sm text-gray-500 leading-relaxed">{f.desc}</p>
+                    <h4 className="font-bold text-lg sm:text-xl text-[#111827] mb-1.5">
+                      {f.title}
+                    </h4>
+                    <p className="text-sm text-gray-500 leading-relaxed">
+                      {f.desc}
+                    </p>
                   </div>
                 </motion.div>
               ))}
             </motion.div>
           </div>
 
-          {/* Right Column: Floating Images & Yellow Card */}
+          {}
           <div className="relative flex justify-center lg:justify-end items-center py-10 lg:ml-auto min-h-[440px] sm:min-h-[640px]">
-            {/* Background Outer Ring */}
+            {}
             <div className="absolute w-[330px] h-[330px] sm:w-[580px] sm:h-[580px] rounded-full bg-[#EAF3F0] -z-10" />
 
-            {/* Main Center Circular Image */}
+            {}
             <div className="w-[300px] h-[300px] sm:w-[540px] sm:h-[540px] rounded-full overflow-hidden shadow-2xl border-8 sm:border-[12px] border-gray-200">
               <img
                 src={`${import.meta.env.BASE_URL}assets/campus.png`}
@@ -205,7 +289,7 @@ export default function WhyChooseUsSection() {
               />
             </div>
 
-            {/* Top-Left Floating Circle Image */}
+            {}
             <div className="absolute top-2 left-0 sm:top-0 sm:left-0 lg:-left-10 w-28 h-28 sm:w-52 sm:h-52 rounded-full border-4 sm:border-8 border-gray-200 shadow-2xl overflow-hidden animate-float-y">
               <img
                 src="https://images.unsplash.com/photo-1719245307966-1d0b89921af4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -214,7 +298,7 @@ export default function WhyChooseUsSection() {
               />
             </div>
 
-            {/* Bottom-Left Floating Circle Image */}
+            {}
             <div className="absolute bottom-4 left-1 sm:-bottom-4 sm:left-2 lg:-left-6 w-32 h-32 sm:w-56 sm:h-56 rounded-full border-4 sm:border-8 border-gray-200 shadow-2xl overflow-hidden animate-float-x">
               <img
                 src={`${import.meta.env.BASE_URL}assets/why.jpg`}
@@ -223,18 +307,18 @@ export default function WhyChooseUsSection() {
               />
             </div>
 
-            {/* Floating Yellow Badge Card with Smooth Number Counter */}
+            {}
             <div className="absolute bottom-4 right-1 sm:top-1/2 sm:bottom-auto sm:-translate-y-1/2 sm:-right-8 lg:-right-24 bg-[#FFA826] text-black px-6 sm:px-10 py-5 sm:py-7 rounded-2xl shadow-2xl flex items-center gap-4 animate-float-x">
               <span className="font-bold text-1xl sm:text-2xl lg:text-3xl tracking-tight">
                 <CounterNumber target={96} duration={2} />
               </span>
               <span className="text-sm font-medium leading-snug">
-                Student & Guardian<br />Satisfaction Rate.
+                Student & Guardian
+                <br />
+                Satisfaction Rate.
               </span>
             </div>
-
           </div>
-
         </div>
       </div>
     </section>

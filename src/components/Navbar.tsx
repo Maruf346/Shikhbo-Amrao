@@ -1,69 +1,101 @@
-import { useState } from 'react'
-import { useSectionNavigation } from '../navigation'
-import type { SectionId } from '../navigation'
+import { useState } from "react"
+
+import { useSectionNavigation } from "../navigation"
+
+import type { SectionId } from "../navigation"
 
 const logo = `${import.meta.env.BASE_URL}assets/logo.png`
 
 type NavItem = {
   label: string
+
   sectionId: SectionId
+
   dropdown?: {
     label: string
+
     sectionId: SectionId
   }[]
 }
 
 const navItems: NavItem[] = [
   {
-    label: 'Home',
-    sectionId: 'home',
+    label: "Home",
+
+    sectionId: "home",
+
     dropdown: [
-      { label: 'Home Overview', sectionId: 'home' },
-      { label: 'About Platform', sectionId: 'about' },
-      { label: 'Quick Query', sectionId: 'newsletter' },
+      { label: "Home Overview", sectionId: "home" },
+
+      { label: "About Platform", sectionId: "about" },
+
+      { label: "Quick Query", sectionId: "newsletter" },
     ],
   },
+
   {
-    label: 'Programs',
-    sectionId: 'categories',
+    label: "Programs",
+
+    sectionId: "categories",
+
     dropdown: [
-      { label: 'Learning Levels', sectionId: 'categories' },
-      { label: 'Batch List', sectionId: 'courses' },
-      { label: 'Why Choose Us', sectionId: 'why-us' },
-      { label: 'Student Reviews', sectionId: 'testimonials' },
+      { label: "Learning Levels", sectionId: "categories" },
+
+      { label: "Batch List", sectionId: "courses" },
+
+      { label: "Why Choose Us", sectionId: "why-us" },
+
+      { label: "Student Reviews", sectionId: "testimonials" },
     ],
   },
+
   {
-    label: 'Batches',
-    sectionId: 'courses',
+    label: "Batches",
+
+    sectionId: "courses",
+
     dropdown: [
-      { label: 'All Batches', sectionId: 'courses' },
-      { label: 'School & College', sectionId: 'categories' },
-      { label: 'ICT & Coding', sectionId: 'categories' },
-      { label: 'Meet Teachers', sectionId: 'teachers' },
+      { label: "All Batches", sectionId: "courses" },
+
+      { label: "School & College", sectionId: "categories" },
+
+      { label: "ICT & Coding", sectionId: "categories" },
+
+      { label: "Meet Teachers", sectionId: "teachers" },
     ],
   },
+
   {
-    label: 'Blog',
-    sectionId: 'blog',
+    label: "Blog",
+
+    sectionId: "blog",
+
     dropdown: [
-      { label: 'Latest Articles', sectionId: 'blog' },
-      { label: 'Student Stories', sectionId: 'testimonials' },
-      { label: 'Ask a Question', sectionId: 'newsletter' },
+      { label: "Latest Articles", sectionId: "blog" },
+
+      { label: "Student Stories", sectionId: "testimonials" },
+
+      { label: "Ask a Question", sectionId: "newsletter" },
     ],
   },
-  { label: 'Contact Us', sectionId: 'newsletter' },
+
+  { label: "Contact Us", sectionId: "newsletter" },
 ]
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+
   const [searchOpen, setSearchOpen] = useState(false)
+
   const { activeSection, navigateToSection } = useSectionNavigation()
 
   const handleNavigate = (sectionId: SectionId) => {
     navigateToSection(sectionId)
+
     setMobileOpen(false)
+
     setOpenDropdown(null)
   }
 
@@ -74,15 +106,25 @@ export default function Navbar() {
           {/* Logo */}
           <button
             type="button"
-            onClick={() => handleNavigate('home')}
+            onClick={() => handleNavigate("home")}
             className="flex items-center gap-2 min-w-0 flex-shrink-0 cursor-pointer"
           >
-            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center overflow-hidden flex-shrink-0" style={{ backgroundColor: 'var(--primary)' }}>
+            <div
+              className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center overflow-hidden flex-shrink-0"
+              style={{ backgroundColor: "var(--primary)" }}
+            >
               {logo ? (
-                <img src={logo} alt="Shikhbo Amrao Logo" className="w-full h-full object-cover" />
+                <img
+                  src={logo}
+                  alt="Shikhbo Amrao Logo"
+                  className="w-full h-full object-cover"
+                />
               ) : null}
             </div>
-            <span className="font-bold text-lg sm:text-xl leading-tight truncate" style={{ color: 'var(--primary)' }}>
+            <span
+              className="font-bold text-lg sm:text-xl leading-tight truncate"
+              style={{ color: "var(--primary)" }}
+            >
               Shikhbo <span className="text-gray-800">Amrao</span>
             </span>
           </button>
@@ -95,15 +137,29 @@ export default function Navbar() {
                   type="button"
                   onClick={() => handleNavigate(item.sectionId)}
                   className={`flex items-center gap-1 px-4 py-2 text-[15px] font-500 transition-colors font-medium rounded-md cursor-pointer ${
-                    activeSection === item.sectionId ? 'text-[var(--primary)]' : 'text-gray-700 hover:text-[var(--primary)]'
+                    activeSection === item.sectionId
+                      ? "text-[var(--primary)]"
+                      : "text-gray-700 hover:text-[var(--primary)]"
                   }`}
-                  onMouseEnter={() => item.dropdown && setOpenDropdown(item.label)}
+                  onMouseEnter={() =>
+                    item.dropdown && setOpenDropdown(item.label)
+                  }
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
                   {item.label}
                   {item.dropdown && (
-                    <svg className="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                    <svg
+                      className="w-3.5 h-3.5 mt-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M19 9l-7 7-7-7"
+                      />
                     </svg>
                   )}
                 </button>
@@ -136,29 +192,61 @@ export default function Navbar() {
               className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
               aria-label="Search"
             >
-              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              <svg
+                className="w-5 h-5 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
               </svg>
             </button>
-            <a 
-              href="https://wa.me/+8801707980299" target="_blank" rel="noopener noreferrer"
+            <a
+              href="https://wa.me/+8801707980299"
+              target="_blank"
+              rel="noopener noreferrer"
               className="theme-btn desktop-trial-btn items-center gap-3 pl-6 pr-1.5 py-1.5 rounded-full"
             >
               Admission
               <span className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center flex-shrink-0 shadow-sm">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M7 17L17 7M17 7H7M17 7v10"
+                  />
                 </svg>
               </span>
             </a>
-            
+
             <button
               className="lg:hidden w-10 h-10 flex items-center justify-center rounded-md border border-gray-200"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Menu"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </button>
           </div>
@@ -174,7 +262,9 @@ export default function Navbar() {
                 className="flex-1 px-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:border-[var(--primary)]"
                 autoFocus
               />
-              <button className="theme-btn py-2 px-5 text-sm justify-center">Search</button>
+              <button className="theme-btn py-2 px-5 text-sm justify-center">
+                Search
+              </button>
             </div>
           </div>
         )}
@@ -187,11 +277,27 @@ export default function Navbar() {
                 {item.dropdown ? (
                   <button
                     className="w-full text-left flex items-center justify-between py-2 text-gray-700 font-medium text-sm"
-                    onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                    onClick={() =>
+                      setOpenDropdown(
+                        openDropdown === item.label ? null : item.label,
+                      )
+                    }
                   >
                     {item.label}
-                    <svg className={`w-4 h-4 transition-transform ${openDropdown === item.label ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <svg
+                      className={`w-4 h-4 transition-transform ${
+                        openDropdown === item.label ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
                     </svg>
                   </button>
                 ) : (
@@ -221,12 +327,22 @@ export default function Navbar() {
             ))}
             <button
               type="button"
-              onClick={() => handleNavigate('newsletter')}
+              onClick={() => handleNavigate("newsletter")}
               className="theme-btn w-full justify-center mt-3"
             >
               Send Query
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
+              <svg
+                className="w-3.5 h-3.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M7 17L17 7M17 7H7M17 7v10"
+                />
               </svg>
             </button>
           </div>

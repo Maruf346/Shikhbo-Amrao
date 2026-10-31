@@ -1,16 +1,23 @@
-import { useState, useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
-import { useSectionNavigation } from '../navigation'
-import { batchCount } from '../data/batches'
+import { useState, useEffect, useRef } from "react"
+
+import { motion } from "framer-motion"
+
+import { useSectionNavigation } from "../navigation"
+
+import { batchCount } from "../data/batches"
 
 const airb = `${import.meta.env.BASE_URL}assets/airb.png`
 
 // Framer Motion Variants & Helpers
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 25 },
+
   visible: {
     opacity: 1,
+
     y: 0,
+
     transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
   },
 }
@@ -18,18 +25,24 @@ const fadeInUp = {
 const floatAnimSlow = {
   animate: {
     y: [0, -10, 0],
+
     rotate: [0, 2, 0],
+
     transition: {
       duration: 5,
+
       repeat: Infinity,
-      ease: 'easeInOut',
+
+      ease: "easeInOut",
     },
   },
 }
 
 // Custom Animated Counter Sub-Component
-function CountUp({ target, duration = 2000, suffix = '+' }) {
+
+function CountUp({ target, duration = 2000, suffix = "+" }) {
   const [count, setCount] = useState(0)
+
   const startTimeRef = useRef(null)
 
   useEffect(() => {
@@ -37,10 +50,13 @@ function CountUp({ target, duration = 2000, suffix = '+' }) {
 
     const animate = (timestamp) => {
       if (!startTimeRef.current) startTimeRef.current = timestamp
+
       const elapsed = timestamp - startTimeRef.current
+
       const progress = Math.min(elapsed / duration, 1)
 
       // Ease-out cubic formula for a smooth slowing-down finish
+
       const easeOut = 1 - Math.pow(1 - progress, 3)
 
       setCount(Math.floor(easeOut * target))
@@ -75,7 +91,8 @@ export default function HeroSection() {
       id="home"
       className="relative overflow-hidden py-20 sm:py-24 lg:py-32 lg:min-h-[820px] flex items-center"
       style={{
-        background: 'radial-gradient(circle at 80% 20%, #e2f4ed 0%, #fdf8f0 50%, #fdf1e4 100%)',
+        background:
+          "radial-gradient(circle at 80% 20%, #e2f4ed 0%, #fdf8f0 50%, #fdf1e4 100%)",
       }}
     >
       {/* ================= DECORATIVE DOODLES ================= */}
@@ -137,7 +154,10 @@ export default function HeroSection() {
 
       {/* 5. Bottom Right: Dark Green Triangle */}
       <div className="absolute bottom-12 right-10 lg:right-16 pointer-events-none float-x hidden sm:block">
-        <svg className="w-22 h-22 text-[#003d2b] fill-current rotate-[215deg]" viewBox="0 0 24 24">
+        <svg
+          className="w-22 h-22 text-[#003d2b] fill-current rotate-[215deg]"
+          viewBox="0 0 24 24"
+        >
           <path d="M3 3 L22 12 L10 22 Z" />
         </svg>
       </div>
@@ -160,18 +180,28 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-gray-600 text-base sm:text-lg lg:text-xl mb-10 leading-relaxed max-w-lg mx-auto sm:mx-0 font-normal">
-              Empowering students with quality education, interactive lessons, and dedicated guidance. Building a brighter future for every learner.
+              Empowering students with quality education, interactive lessons,
+              and dedicated guidance. Building a brighter future for every
+              learner.
             </p>
 
             <button
               type="button"
-              onClick={() => navigateToSection('courses')}
+              onClick={() => navigateToSection("courses")}
               className="inline-flex items-center gap-4 bg-[#003d2b] hover:bg-[#002b1f] !text-white pl-8 pr-3 py-3 rounded-full font-semibold text-base sm:text-lg transition-all shadow-lg hover:shadow-xl group"
             >
               <span className="text-white">Get Started</span>
               <span className="w-10 h-10 rounded-full bg-[#f3ab27] flex items-center justify-center text-[#003d2b] group-hover:scale-105 transition-transform">
-                <svg className="w-5 h-5 stroke-current stroke-[3]" fill="none" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
+                <svg
+                  className="w-5 h-5 stroke-current stroke-[3]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M7 17L17 7M17 7H7M17 7v10"
+                  />
                 </svg>
               </span>
             </button>
@@ -185,7 +215,9 @@ export default function HeroSection() {
                 <div className="font-bold text-xl sm:text-2xl leading-none text-[#f3ab27]">
                   <CountUp target={500} duration={2200} />
                 </div>
-                <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1">Student</div>
+                <div className="text-xs sm:text-sm text-gray-500 font-medium mt-1">
+                  Student
+                </div>
               </div>
               <div className="hidden min-[420px]:flex items-center -space-x-3">
                 <img
