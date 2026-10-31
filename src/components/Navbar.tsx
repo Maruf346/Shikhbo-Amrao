@@ -99,6 +99,15 @@ export default function Navbar() {
     setOpenDropdown(null)
   }
 
+  const handlePrimaryNavigate = (item: NavItem) => {
+    if (item.label === "Blog") {
+      window.location.href = "/blog/"
+      return
+    }
+
+    handleNavigate(item.sectionId)
+  }
+
   return (
     <>
       <header className="sticky top-0 z-50 bg-white shadow-sm">
@@ -135,7 +144,7 @@ export default function Navbar() {
               <div key={item.label} className="relative group">
                 <button
                   type="button"
-                  onClick={() => handleNavigate(item.sectionId)}
+                  onClick={() => handlePrimaryNavigate(item)}
                   className={`flex items-center gap-1 px-4 py-2 text-[15px] font-500 transition-colors font-medium rounded-md cursor-pointer ${
                     activeSection === item.sectionId
                       ? "text-[var(--primary)]"
@@ -173,7 +182,11 @@ export default function Navbar() {
                       <button
                         key={sub.label}
                         type="button"
-                        onClick={() => handleNavigate(sub.sectionId)}
+                        onClick={() =>
+                          item.label === "Blog" && sub.label === "Latest Articles"
+                            ? (window.location.href = "/blog/")
+                            : handleNavigate(sub.sectionId)
+                        }
                         className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:text-[var(--primary)] hover:bg-gray-50 transition-colors cursor-pointer"
                       >
                         {sub.label}
@@ -303,7 +316,7 @@ export default function Navbar() {
                 ) : (
                   <button
                     type="button"
-                    onClick={() => handleNavigate(item.sectionId)}
+                      onClick={() => handlePrimaryNavigate(item)}
                     className="block w-full text-left py-2 text-gray-700 font-medium text-sm"
                   >
                     {item.label}
@@ -315,7 +328,11 @@ export default function Navbar() {
                       <button
                         key={sub.label}
                         type="button"
-                        onClick={() => handleNavigate(sub.sectionId)}
+                        onClick={() =>
+                          item.label === "Blog" && sub.label === "Latest Articles"
+                            ? (window.location.href = "/blog/")
+                            : handleNavigate(sub.sectionId)
+                        }
                         className="block w-full text-left py-1.5 text-sm text-gray-600 hover:text-[var(--primary)]"
                       >
                         {sub.label}
